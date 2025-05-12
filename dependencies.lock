@@ -1,0 +1,184 @@
+dependencies:
+  espressif/button:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__button
+      type: local
+    version: 3.3.1
+  espressif/cbor:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__cbor
+      type: local
+    version: 0.6.0~1
+  espressif/cmake_utilities:
+    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
+    dependencies:
+    - name: idf
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.5.3
+  espressif/esp-dsp:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp-dsp
+      type: local
+    version: 1.4.12
+  espressif/esp-serial-flasher:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp-serial-flasher
+      type: local
+    version: 0.0.11
+  espressif/esp_diag_data_store:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_diag_data_store
+      type: local
+    version: 1.0.1
+  espressif/esp_diagnostics:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_diagnostics
+      type: local
+    version: 1.0.2
+  espressif/esp_lcd_gc9b71:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_lcd_gc9b71
+      type: local
+    version: 1.0.2
+  espressif/esp_lcd_sh8601:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_lcd_sh8601
+      type: local
+    version: 1.0.0
+  espressif/esp_lcd_spd2010:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_lcd_spd2010
+      type: local
+    version: 1.0.2
+  espressif/esp_lcd_touch:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_lcd_touch
+      type: local
+    version: 1.1.2
+  espressif/esp_lcd_touch_spd2010:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_lcd_touch_spd2010
+      type: local
+    version: 0.0.1
+  espressif/esp_rcp_update:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_rcp_update
+      type: local
+    version: 1.2.0
+  espressif/esp_schedule:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_schedule
+      type: local
+    version: 1.2.0
+  espressif/esp_secure_cert_mgr:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__esp_secure_cert_mgr
+      type: local
+    version: 2.5.0
+  espressif/jsmn:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__jsmn
+      type: local
+    version: 1.1.0
+  espressif/json_generator:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__json_generator
+      type: local
+    version: 1.1.2
+  espressif/json_parser:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__json_parser
+      type: local
+    version: 1.0.3
+  espressif/knob:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__knob
+      type: local
+    version: 1.0.0
+  espressif/led_strip:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__led_strip
+      type: local
+    version: 2.5.5
+  espressif/mdns:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__mdns
+      type: local
+    version: 1.8.2
+  espressif/network_provisioning:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\espressif__network_provisioning
+      type: local
+    version: 1.0.5
+  espressif/rmaker_common:
+    component_hash: a3a1df881278d0351fc850b77792fe8a196ddd6dcacbea203d606329cc6a0239
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.4.6
+  idf:
+    source:
+      type: idf
+    version: 5.3.1
+  lvgl/lvgl:
+    dependencies: []
+    source:
+      path: C:\Users\abood\onek\managed_components\lvgl__lvgl
+      type: local
+    version: 8.4.0
+direct_dependencies:
+- espressif/button
+- espressif/cbor
+- espressif/cmake_utilities
+- espressif/esp-dsp
+- espressif/esp-serial-flasher
+- espressif/esp_diag_data_store
+- espressif/esp_diagnostics
+- espressif/esp_lcd_gc9b71
+- espressif/esp_lcd_sh8601
+- espressif/esp_lcd_spd2010
+- espressif/esp_lcd_touch
+- espressif/esp_lcd_touch_spd2010
+- espressif/esp_rcp_update
+- espressif/esp_schedule
+- espressif/esp_secure_cert_mgr
+- espressif/jsmn
+- espressif/json_generator
+- espressif/json_parser
+- espressif/knob
+- espressif/led_strip
+- espressif/mdns
+- espressif/network_provisioning
+- espressif/rmaker_common
+- idf
+- lvgl/lvgl
+manifest_hash: 0b6555e0c666c8e37a57a701104dd9c62a05a16df5906538e887841f1e90d601
+target: esp32s3
+version: 2.0.0
