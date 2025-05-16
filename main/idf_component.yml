@@ -1,4 +1,5 @@
 dependencies:
+  espressif/esp_lcd_touch_cst816s: "*"
   espressif/led_strip: "^2.5.5"
   espressif/knob: "^0.1.5"
   idf: ">5.0.4,!=5.1.1"
@@ -14,14 +15,12 @@ dependencies:
   esp_lcd_touch_spd2010:
     public: true
     version: ^0.0.1
-  idf: '>5.0.4,!=5.1.1'
   lvgl/lvgl:
     public: true
     version: ^8
-  espressif/knob:
-    version: "==1.0.0"
-    public: true
-
   espressif/button:
     version: "==3.3.1"
+    public: true
+  espressif/esp_tinyusb:
+    version: "^1.7.4~1"
     public: true

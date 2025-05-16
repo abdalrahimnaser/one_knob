@@ -1,13 +1,8 @@
 # ChangeLog
 
-## v1.0.0 - 2024-9-26
-
-* Add ext1_wakeup mode for Knob when define CONFIG_PM_POWER_DOWN_PERIPHERAL_IN_LIGHT_SLEEP=y
-
 ## v0.1.5 - 2024-7-3
 
-### Enhancements:
-
+###  Enhancements:
 * Support power save mode
 
 ## v0.1.4 - 2023-11-23
@@ -16,7 +11,7 @@
 
 ## v0.1.3 - 2023-6-2
 
-### Enhancements:
+###  Enhancements:
 
 * Add power on knob position detection to avoid logical inversion caused by knob position
 * Change test to test_apps project
@@ -39,9 +34,10 @@
 ### Enhancements:
 
 * Initial version
+
 * The following types of events are supported
 
-| EVENT      | 描述                                   |
+|   EVENT    |                  描述                  |
 | ---------- | -------------------------------------- |
 | KNOB_LEFT  | EVENT: Rotate to the left              |
 | KNOB_RIGHT | EVENT: Rotate to the right             |
@@ -50,4 +46,5 @@
 | KNOB_ZERO  | EVENT: Count back to 0                 |
 
 * Support for defining multiple knobs
+
 * Support binding callback functions for each event and adding user-data

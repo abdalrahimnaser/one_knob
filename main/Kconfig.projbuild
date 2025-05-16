@@ -38,4 +38,11 @@ menu "Example Configuration"
             bool "CST816S"
     endchoice
 
+    config TINYUSB_HID_ENABLED
+        bool "Enable USB HID (keyboard) functionality"
+        default y
+        help
+            Enable this option to add USB HID keyboard functionality.
+            This allows the device to act as a USB keyboard and send keystrokes to a connected computer.
+
 endmenu

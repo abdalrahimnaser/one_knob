@@ -6,7 +6,6 @@
 #pragma once
 
 #include "esp_err.h"
-#include "lvgl.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -20,20 +19,11 @@ extern "C" {
 esp_err_t app_features_init(void);
 
 /**
- * @brief Register callbacks for UI elements
+ * @brief Process knob events for volume control
  * 
- * This should be called after the UI has been initialized
- * 
- * @return ESP_OK if successful, error code otherwise
+ * @param event Knob event data
  */
-esp_err_t app_features_register_ui_callbacks(void);
-
-/**
- * @brief Example timer button callback
- * 
- * @param e LVGL event
- */
-void app_timer_button_callback(lv_event_t *e);
+void app_process_knob_event(void *event);
 
 #ifdef __cplusplus
 }

@@ -381,6 +381,7 @@ static void knob_event_cb(void *arg, void *data)
 {
     ESP_LOGI(TAG, "knob event %s, %d", knob_event_table[(knob_event_t)data], iot_knob_get_count_value(knob));
     LVGL_knob_event(data);
+    app_process_knob_event(data);
    
 }
 
@@ -652,7 +653,6 @@ void app_main(void)
         
         // Initialize and register app features instead of directly registering the callback
         app_features_init();
-        app_features_register_ui_callbacks();
   
         // lv_demo_widgets();      /* A widgets example */
         //lv_demo_music();        /* A modern, smartphone-like music player demo. */
