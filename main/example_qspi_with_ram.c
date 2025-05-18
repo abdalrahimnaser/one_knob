@@ -363,9 +363,9 @@ static const sh8601_lcd_init_cmd_t lcd_init_cmds[] = {
 
 //***************The following code is for standardizing the event triggering of rotary encoders and buttons.**************** */
 //**************旋钮********* */
-extern void   LVGL_knob_event(void *event);
+// extern void   LVGL_knob_event(void *event);
 
-extern void   LVGL_button_event(void *event);
+// extern void   LVGL_button_event(void *event);
 
 static knob_handle_t knob = NULL;
 
@@ -380,7 +380,7 @@ const char *knob_event_table[] = {
 static void knob_event_cb(void *arg, void *data)
 {
     ESP_LOGI(TAG, "knob event %s, %d", knob_event_table[(knob_event_t)data], iot_knob_get_count_value(knob));
-    LVGL_knob_event(data);
+    // LVGL_knob_event(data);
     app_process_knob_event(data);
    
 }
@@ -438,7 +438,7 @@ static void button_event_cb(void *arg, void *data)
         timer_button_pressed = true;
     }
     
-    LVGL_button_event(data);
+    //LVGL_button_event(data);
 }
 void button_init(uint32_t button_num)
 {

@@ -5,6 +5,12 @@
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
 #include "driver/gpio.h"
+#include "ui/ui.h"
+#include "ui/ui_helpers.h"
+#include "lvgl.h"
+
+
+
 
 #define REPORT_ID_CONSUMER_CONTROL 3 // got it from usb_descriptors.h (it's 3 since first is 1, then each is +1 till you get to 3)
 
@@ -66,7 +72,7 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
 
 // Volume control parameters
 static int volume_level = 50;          // Current volume (0-100%)
-static const int VOLUME_STEP = 5;      // Change per knob tick
+static const int VOLUME_STEP = 2;      // Change per knob tick
 static bool volume_debounce = false;   // Simple debounce flag
 
 
@@ -79,46 +85,77 @@ static bool volume_debounce = false;   // Simple debounce flag
 /// 
 
 
+// static void send_hid_macro(uint8_t code)
+// {
+//     // Prepare keyboard report
+//     uint8_t keycode[6] = {0}; // Initialize all keys to 0
+    
+//     // Send media control key
+//     keycode[0] = code;
+//     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
 
-static void send_hid_macro(uint8_t code)
-{
-    // Prepare keyboard report
-    uint8_t keycode[6] = {0}; // Initialize all keys to 0
     
-    // Send media control key
-    keycode[0] = code;
-    tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
+//     // Small delay to ensure the key press is registered
+//     vTaskDelay(pdMS_TO_TICKS(50));
     
-    // Small delay to ensure the key press is registered
-    vTaskDelay(pdMS_TO_TICKS(50));
-    
-    // Release all keys
-    tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
+//     // Release all keys
+//     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
+// }
+
+// Task handle for arc display updates
+static TaskHandle_t arc_display_task_handle = NULL;
+
+// Queue handle for volume updates
+static QueueHandle_t volume_queue = NULL;
+
+// Timer for auto-hiding the arc
+static TimerHandle_t arc_hide_timer = NULL;
+
+// Timer callback to hide the arc
+static void arc_hide_timer_callback(TimerHandle_t xTimer) {
+    lv_obj_add_flag(ui_Arc1, LV_OBJ_FLAG_HIDDEN);
 }
 
-static void send_consumer_control(uint16_t usage_code){
+static void arc_display_task(void *pvParameters) {
+    int volume_level;
+    while(1) {
+        if(xQueueReceive(volume_queue, &volume_level, portMAX_DELAY)) {
+            // Show arc and update value
+            lv_obj_clear_flag(ui_Arc1, LV_OBJ_FLAG_HIDDEN);
+            lv_arc_set_value(ui_Arc1, volume_level);
+            lv_event_send(ui_Arc1, LV_EVENT_VALUE_CHANGED, 0);
 
+            // Reset the hide timer
+            xTimerReset(arc_hide_timer, 0);
+        }
+    }
+}
+
+static void update_arc_display(int volume_level) {
+    // Send volume level to the queue
+    xQueueSend(volume_queue, &volume_level, 0);
+}
+
+static void send_consumer_control(uint16_t usage_code, int volume_level){
     // Send the consumer control code
     tud_hid_report(REPORT_ID_CONSUMER_CONTROL, &usage_code, 2);
     
+    // Queue the arc update
+    update_arc_display(volume_level);
+
     // Small delay to ensure the command is registered
     vTaskDelay(pdMS_TO_TICKS(50));
     
-
     // Release the control
     uint16_t empty_key = 0;
     tud_hid_report(REPORT_ID_CONSUMER_CONTROL, &empty_key, 2);
-
 }
+
+// maybe you need to implement a buffer to handle fast volume changes with some freetros task/timer/delay as above
+// so probably your prob isn't bounce as much as fast changes, but i'm not sure
 
 void app_process_knob_event(void *event)
 {
-    // Only process volume on main screen (screen_id 1)
-    extern uint8_t HF_ui_screen_id;
-    if (HF_ui_screen_id != 1) {
-        return;
-    }
-    
     // Simple debounce protection
     if (volume_debounce) {
         return;
@@ -135,7 +172,7 @@ void app_process_knob_event(void *event)
                 volume_level = 100;
             }
             ESP_LOGI(TAG, "Volume UP - Level: %d%%", volume_level);
-            send_consumer_control(HID_USAGE_CONSUMER_VOLUME_INCREMENT);
+            send_consumer_control(HID_USAGE_CONSUMER_VOLUME_INCREMENT, volume_level);
         }
     } 
     else if (event_type == 1) { // KNOB_RIGHT
@@ -145,12 +182,12 @@ void app_process_knob_event(void *event)
                 volume_level = 0;
             }
             ESP_LOGI(TAG, "Volume DOWN - Level: %d%%", volume_level);
-            send_consumer_control(HID_USAGE_CONSUMER_VOLUME_DECREMENT);
+            send_consumer_control(HID_USAGE_CONSUMER_VOLUME_DECREMENT, volume_level);
 
         }
     }
     else if (event_type == 4) { // KNOB_ZERO
-        send_consumer_control(HID_USAGE_CONSUMER_MUTE);
+        send_consumer_control(HID_USAGE_CONSUMER_MUTE, volume_level);
         ESP_LOGI(TAG, "Volume MUTE");
     }
     
@@ -171,6 +208,40 @@ esp_err_t app_features_init(void)
         .pull_down_en = false,
     };
     ESP_ERROR_CHECK(gpio_config(&boot_button_config));
+
+    // Create queue for volume updates
+    volume_queue = xQueueCreate(5, sizeof(int));
+    if (volume_queue == NULL) {
+        ESP_LOGE(TAG, "Failed to create volume queue");
+        return ESP_FAIL;
+    }
+
+    // Create timer for auto-hiding the arc
+    arc_hide_timer = xTimerCreate(
+        "arc_hide",           // Timer name
+        pdMS_TO_TICKS(5000),  // 500ms period
+        pdFALSE,             // One-shot timer
+        0,                   // Timer ID
+        arc_hide_timer_callback  // Callback function
+    );
+    if (arc_hide_timer == NULL) {
+        ESP_LOGE(TAG, "Failed to create arc hide timer");
+        return ESP_FAIL;
+    }
+
+    // Create task for arc display updates
+    BaseType_t ret = xTaskCreate(
+        arc_display_task,    // Task function
+        "arc_display",       // Task name
+        2048,               // Stack size
+        NULL,               // Task parameters
+        5,                  // Task priority
+        &arc_display_task_handle  // Task handle
+    );
+    if (ret != pdPASS) {
+        ESP_LOGE(TAG, "Failed to create arc display task");
+        return ESP_FAIL;
+    }
 
     ESP_LOGI(TAG, "USB initialization");
     const tinyusb_config_t tusb_cfg = {
