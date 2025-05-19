@@ -3,12 +3,19 @@
 // LVGL version: 8.3.11
 // Project name: oneknob_ui_ux
 
-#ifndef _UI_EVENTS_H
-#define _UI_EVENTS_H
+#ifndef _UI_COMP_ARC2_H
+#define _UI_COMP_ARC2_H
+
+#include "../ui.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+// COMPONENT Arc2
+#define UI_COMP_ARC2_ARC2 0
+#define _UI_COMP_ARC2_NUM 1
+lv_obj_t * ui_Arc2_create(lv_obj_t * comp_parent);
 
 #ifdef __cplusplus
 } /*extern "C"*/

@@ -3,12 +3,15 @@
 // LVGL version: 8.3.11
 // Project name: oneknob_ui_ux
 
-#ifndef _UI_EVENTS_H
-#define _UI_EVENTS_H
+#ifndef _ONEKNOB_UI_UX_UI_COMP_HOOK_H
+#define _ONEKNOB_UI_UX_UI_COMP_HOOK_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+void ui_comp_Arc2_create_hook(lv_obj_t * comp);
+void ui_comp_clockgroup_create_hook(lv_obj_t * comp);
 
 #ifdef __cplusplus
 } /*extern "C"*/

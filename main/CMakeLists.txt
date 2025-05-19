@@ -6,6 +6,7 @@ idf_component_register(SRC_DIRS
                     "ui/components"
                     "ui/images"
                     "ui/screens"
+                    "ui/fonts"
                     "ui"
                     "app"
                     INCLUDE_DIRS

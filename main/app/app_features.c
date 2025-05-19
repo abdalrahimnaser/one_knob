@@ -8,13 +8,11 @@
 #include "ui/ui.h"
 #include "ui/ui_helpers.h"
 #include "lvgl.h"
+#include "user_config.h"
 
+#define REPORT_ID_CONSUMER_CONTROL 3 
 
-
-
-#define REPORT_ID_CONSUMER_CONTROL 3 // got it from usb_descriptors.h (it's 3 since first is 1, then each is +1 till you get to 3)
-
-#define APP_BUTTON (GPIO_NUM_0) // Use BOOT signal by default
+#define APP_BUTTON (GPIO_NUM_0)
 static const char *TAG = "app_features";
 
 /************* TinyUSB descriptors ****************/
@@ -69,13 +67,10 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
 {
 }
 
-
 // Volume control parameters
 static int volume_level = 50;          // Current volume (0-100%)
 static const int VOLUME_STEP = 2;      // Change per knob tick
 static bool volume_debounce = false;   // Simple debounce flag
-
-
 
 /// NOTE:
 /// FOR LATER, IF YOU WANNA ENHANCE DEBOUNCE, TRY TO REPLICATE (OR FIND IF ALREADY THERE)
@@ -84,23 +79,39 @@ static bool volume_debounce = false;   // Simple debounce flag
 /// READ CONSUMER::PRESS() IN CONSUMERAPI.HPP (HID-PROJECT.H)
 /// 
 
+/////////////////////profile 1/////////////////////
+static void send_hid_macro(uint8_t code, uint8_t modifier)
+{
+    // Prepare keyboard report
+    uint8_t keycode[6] = {0}; // Initialize all keys to 0
+    
+    keycode[0] = code;
+    tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 
+                            modifier,
+                            keycode);
+    
+    // Small delay to ensure the key press is registered
+    vTaskDelay(pdMS_TO_TICKS(50));
+    
+    // Release all keys
+    tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
+}
 
-// static void send_hid_macro(uint8_t code)
-// {
-//     // Prepare keyboard report
-//     uint8_t keycode[6] = {0}; // Initialize all keys to 0
+void profile_1_process_knob_event(void *event)
+{
+    // Get event type
+    int event_type = (int)event;
     
-//     // Send media control key
-//     keycode[0] = code;
-//     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, keycode);
+    // Process volume control
+    if (event_type == 0) { // KNOB_LEFT
+        send_hid_macro(code_left, modifier_left);
+    } 
+    else if (event_type == 1) { // KNOB_RIGHT
+        send_hid_macro(code_right, modifier_right);
+    }
+}
 
-    
-//     // Small delay to ensure the key press is registered
-//     vTaskDelay(pdMS_TO_TICKS(50));
-    
-//     // Release all keys
-//     tud_hid_keyboard_report(HID_ITF_PROTOCOL_KEYBOARD, 0, NULL);
-// }
+/////////////////////volume control/////////////////////
 
 // Task handle for arc display updates
 static TaskHandle_t arc_display_task_handle = NULL;
@@ -151,10 +162,7 @@ static void send_consumer_control(uint16_t usage_code, int volume_level){
     tud_hid_report(REPORT_ID_CONSUMER_CONTROL, &empty_key, 2);
 }
 
-// maybe you need to implement a buffer to handle fast volume changes with some freetros task/timer/delay as above
-// so probably your prob isn't bounce as much as fast changes, but i'm not sure
-
-void app_process_knob_event(void *event)
+void volume_control_process_knob_event(void *event)
 {
     // Simple debounce protection
     if (volume_debounce) {
@@ -183,7 +191,6 @@ void app_process_knob_event(void *event)
             }
             ESP_LOGI(TAG, "Volume DOWN - Level: %d%%", volume_level);
             send_consumer_control(HID_USAGE_CONSUMER_VOLUME_DECREMENT, volume_level);
-
         }
     }
     else if (event_type == 4) { // KNOB_ZERO
@@ -263,4 +270,3 @@ esp_err_t app_features_init(void)
 
     return ESP_OK;
 }
-

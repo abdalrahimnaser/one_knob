@@ -23,7 +23,8 @@ esp_err_t app_features_init(void);
  * 
  * @param event Knob event data
  */
-void app_process_knob_event(void *event);
+void volume_control_process_knob_event(void *event);
+void profile_1_process_knob_event(void *event);
 
 #ifdef __cplusplus
 }

@@ -45,6 +45,9 @@ extern void ui_init(void);
 
 // Include the app_features header
 #include "app/app_features.h"
+#include "app/ui_dynamic.h"
+
+
 
 static const char *TAG = "example";
 
@@ -52,6 +55,14 @@ static SemaphoreHandle_t lvgl_mux = NULL;
 
 // Global variable to track if we're in the timer screen
 static bool timer_button_pressed = false;
+
+
+
+static bool recording = false;
+
+static bool profile_1_selected = true; // if true profile 1 is selected else it's volume control
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////// Please update the following configuration according to your LCD spec //////////////////////////////
@@ -381,8 +392,12 @@ static void knob_event_cb(void *arg, void *data)
 {
     ESP_LOGI(TAG, "knob event %s, %d", knob_event_table[(knob_event_t)data], iot_knob_get_count_value(knob));
     // LVGL_knob_event(data);
-    app_process_knob_event(data);
-   
+    // app_process_knob_event(data);
+    if (profile_1_selected) {
+        profile_1_process_knob_event(data);
+    } else {
+        volume_control_process_knob_event(data);
+    }
 }
 
 void knob_init(uint32_t encoder_a, uint32_t encoder_b)
@@ -653,7 +668,8 @@ void app_main(void)
         
         // Initialize and register app features instead of directly registering the callback
         app_features_init();
-  
+        init_clock();
+        //init_system_usage();
         // lv_demo_widgets();      /* A widgets example */
         //lv_demo_music();        /* A modern, smartphone-like music player demo. */
         // lv_demo_stress();       /* A stress test for LVGL. */
