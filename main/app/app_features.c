@@ -4,20 +4,42 @@
 #include "freertos/task.h"
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
+#include "class/cdc/cdc_device.h"
 #include "driver/gpio.h"
 #include "ui/ui.h"
 #include "ui/ui_helpers.h"
 #include "lvgl.h"
 #include "user_config.h"
+#include "tusb_cdc_acm.h"
+#include "nvs_flash.h"
+#include "ui_dynamic.h"
 
 #define REPORT_ID_CONSUMER_CONTROL 3 
+
+
+
+enum
+{
+  ITF_NUM_HID,
+  ITF_NUM_CDC,
+};
+
+#define ITF_NUM_TOTAL 3
+#define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_DESC_LEN + TUD_CDC_DESC_LEN)
+#define EPNUM_CDC_NOTIF 0x81
+#define EPNUM_CDC_OUT 0x02
+#define EPNUM_CDC_IN 0x82
+#define EPNUM_HID 0x83
+
+
+
 
 #define APP_BUTTON (GPIO_NUM_0)
 static const char *TAG = "app_features";
 
 /************* TinyUSB descriptors ****************/
 
-#define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + CFG_TUD_HID * TUD_HID_DESC_LEN)
+#define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + CFG_TUD_HID * TUD_HID_DESC_LEN + CFG_TUD_CDC * TUD_CDC_DESC_LEN)
 
 /**
  * @brief HID report descriptor
@@ -30,20 +52,28 @@ const uint8_t hid_report_descriptor[] = {
 /**
  * @brief String descriptor
  */
-const char* hid_string_descriptor[5] = {
+const char* hid_string_descriptor[6] = {
     (char[]){0x09, 0x04},  // 0: is supported language is English (0x0409)
     "TinyUSB",             // 1: Manufacturer
     "TinyUSB Device",      // 2: Product
     "123456",              // 3: Serials, should use chip ID
-    "Example HID interface",  // 4: HID
+    "CDC Interface",       // 4: CDC
+    "Example HID interface",  // 5: HID
+
 };
 
 /**
  * @brief Configuration descriptor
  */
 static const uint8_t hid_configuration_descriptor[] = {
-    TUD_CONFIG_DESCRIPTOR(1, 1, 0, TUSB_DESC_TOTAL_LEN, TUSB_DESC_CONFIG_ATT_REMOTE_WAKEUP, 100),
-    TUD_HID_DESCRIPTOR(0, 4, false, sizeof(hid_report_descriptor), 0x81, 16, 10),
+    // Configuration number, interface count, string index, total length, attribute, power in mA
+    TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0, TUSB_DESC_TOTAL_LEN, TUSB_DESC_CONFIG_ATT_REMOTE_WAKEUP, 200),
+
+    // Interface number, string index, boot protocol, report descriptor len, EP In address, size & polling interval
+    TUD_HID_DESCRIPTOR(ITF_NUM_HID, 5, HID_ITF_PROTOCOL_NONE, sizeof(hid_report_descriptor), EPNUM_HID, CFG_TUD_HID_EP_BUFSIZE, 10),
+
+    // Interface number, string index, EP notification address and size, EP data address (out, in) and size.
+    TUD_CDC_DESCRIPTOR(ITF_NUM_CDC, 4, EPNUM_CDC_NOTIF, 8, EPNUM_CDC_OUT, EPNUM_CDC_IN, 64),
 };
 
 /********* TinyUSB HID callbacks ***************/
@@ -66,6 +96,29 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize)
 {
 }
+
+/********* TinyUSB CDC callbacks ***************/
+
+static uint8_t buf[CONFIG_TINYUSB_CDC_RX_BUFSIZE + 1];
+
+
+void tinyusb_cdc_rx_callback(int itf, cdcacm_event_t *event)
+{
+    size_t rx_size = 0;
+    esp_err_t ret = tinyusb_cdcacm_read(itf, buf, CONFIG_TINYUSB_CDC_RX_BUFSIZE, &rx_size);
+    if (ret == ESP_OK)
+    {
+        ESP_LOGD(TAG, "Data from channel %d:", itf);
+        ESP_LOG_BUFFER_HEXDUMP(TAG, buf, rx_size, ESP_LOG_DEBUG);
+        
+        // Null terminate the received data
+        buf[rx_size] = '\0';
+        
+        // Process the input as usage data
+        process_usage_input((char*)buf);
+    }
+}
+
 
 // Volume control parameters
 static int volume_level = 50;          // Current volume (0-100%)
@@ -216,6 +269,9 @@ esp_err_t app_features_init(void)
     };
     ESP_ERROR_CHECK(gpio_config(&boot_button_config));
 
+    // Initialize CPU usage display
+    init_usage_display();
+    
     // Create queue for volume updates
     volume_queue = xQueueCreate(5, sizeof(int));
     if (volume_queue == NULL) {
@@ -268,5 +324,16 @@ esp_err_t app_features_init(void)
     ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
     ESP_LOGI(TAG, "USB initialization DONE");
 
+    tinyusb_config_cdcacm_t acm_cfg = {
+        .usb_dev = TINYUSB_USBDEV_0,
+        .cdc_port = TINYUSB_CDC_ACM_0,
+        .rx_unread_buf_sz = 64,
+        .callback_rx = &tinyusb_cdc_rx_callback,
+        .callback_rx_wanted_char = NULL,
+    };
+
+    ESP_ERROR_CHECK(tusb_cdc_acm_init(&acm_cfg));
+
     return ESP_OK;
 }
+

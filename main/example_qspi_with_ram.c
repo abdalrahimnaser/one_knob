@@ -669,6 +669,7 @@ void app_main(void)
         // Initialize and register app features instead of directly registering the callback
         app_features_init();
         init_clock();
+
         //init_system_usage();
         // lv_demo_widgets();      /* A widgets example */
         //lv_demo_music();        /* A modern, smartphone-like music player demo. */
