@@ -6,6 +6,7 @@
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include <string.h>
+#include "vars.h"
 
 static const char *TAG = "UI_DYNAMIC";
 

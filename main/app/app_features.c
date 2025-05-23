@@ -18,11 +18,8 @@ static const char *TAG = "app_features";
 ///////////////////
 /// helper print function
 void cdc_print(const char* str) {
-    for(int i = 0; i < 20; i++) {
-        tud_cdc_write(str, strlen(str));
-        tud_cdc_write_flush();
-        vTaskDelay(pdMS_TO_TICKS(1000));
-    }
+    tud_cdc_write(str, strlen(str));
+    tud_cdc_write_flush();
 }
 
 ////////////////////////////
@@ -334,12 +331,16 @@ static TimerHandle_t arc_hide_timer = NULL;
 // Timer callback to hide the arc
 static void arc_hide_timer_callback(TimerHandle_t xTimer) {
     lv_obj_add_flag(ui_Arc1, LV_OBJ_FLAG_HIDDEN);
+    _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen1_screen_init);
 }
 
 static void arc_display_task(void *pvParameters) {
     int volume_level;
     while(1) {
         if(xQueueReceive(volume_queue, &volume_level, portMAX_DELAY)) {
+            //show screen4
+            _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen4_screen_init);
+
             // Show arc and update value
             lv_obj_clear_flag(ui_Arc1, LV_OBJ_FLAG_HIDDEN);
             lv_arc_set_value(ui_Arc1, volume_level);

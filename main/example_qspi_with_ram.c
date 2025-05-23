@@ -46,7 +46,7 @@ extern void ui_init(void);
 // Include the app_features header
 #include "app/app_features.h"
 #include "app/ui_dynamic.h"
-
+#include "app/vars.h"
 
 
 static const char *TAG = "example";
@@ -60,7 +60,7 @@ static bool timer_button_pressed = false;
 
 static bool recording = false;
 
-static bool profile_1_selected = true; // if true profile 1 is selected else it's volume control
+bool profile_1_selected = true; // if true profile 1 is selected else it's volume control
 
 
 
@@ -448,12 +448,13 @@ static void button_event_cb(void *arg, void *data)
 {
     ESP_LOGI(TAG, "Button event %s", button_event_table[(button_event_t)data]);
     
-    // Check if we're in the main screen and the button is pressed
-    if ((button_event_t)data == BUTTON_PRESS_DOWN) {
-        timer_button_pressed = true;
+    if ((button_event_t)data == BUTTON_LONG_PRESS_START) {
+        profile_1_selected = !profile_1_selected;
+
     }
-    
-    //LVGL_button_event(data);
+
+
+
 }
 void button_init(uint32_t button_num)
 {
