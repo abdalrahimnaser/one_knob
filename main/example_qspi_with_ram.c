@@ -679,4 +679,7 @@ void app_main(void)
         // Release the mutex
         example_lvgl_unlock();
     }
+
+
+    
 }

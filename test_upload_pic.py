@@ -15,7 +15,7 @@ class ImageFlasherApp:
         
         self.image_path = None
         self.processed_image = None
-        self.flash_address = "0x310000"  # Default address
+        self.flash_address = "0x311000"  # Default address
         
         self.create_widgets()
         self.refresh_ports()
@@ -57,7 +57,7 @@ class ImageFlasherApp:
         preview_frame = ttk.LabelFrame(main_frame, text="Image Preview", padding="5")
         preview_frame.pack(fill="both", expand=True, pady=5)
         
-        self.preview_canvas = tk.Canvas(preview_frame, bg="lightgray", width=320, height=240)
+        self.preview_canvas = tk.Canvas(preview_frame, bg="lightgray", width=466, height=466)
         self.preview_canvas.pack(padx=5, pady=5)
         
         # Flash button
@@ -111,11 +111,11 @@ class ImageFlasherApp:
     def process_image_preview(self):
         # Open and resize image for preview
         img = Image.open(self.image_path)
-        img = img.resize((320, 240), Image.LANCZOS)
+        img = img.resize((466, 466), Image.LANCZOS)
         
         # Display preview
         self.preview_img = ImageTk.PhotoImage(img)
-        self.preview_canvas.create_image(160, 120, image=self.preview_img)
+        self.preview_canvas.create_image(233, 233, image=self.preview_img)
     
     def start_flash_thread(self):
         # Disable UI elements during flashing
@@ -134,7 +134,7 @@ class ImageFlasherApp:
             
             # Open and resize image
             img = Image.open(self.image_path)
-            img = img.resize((320, 240), Image.LANCZOS)
+            img = img.resize((466, 466), Image.LANCZOS)
             
             # Convert to RGB if needed
             if img.mode != "RGB":
@@ -146,7 +146,7 @@ class ImageFlasherApp:
             self.root.update_idletasks()
             
             # Create binary data
-            header = struct.pack("<HHB", width, height, 2)  # 2 = LV_IMG_CF_TRUE_COLOR
+            header = struct.pack("<HHB", width, height, 4)  # 4 = LV_IMG_CF_TRUE_COLOR
             padding = b'\x00' * 3  # Padding to make header 8 bytes
             
             # Convert pixels to RGB565
@@ -154,10 +154,9 @@ class ImageFlasherApp:
             for y in range(height):
                 for x in range(width):
                     r, g, b = img.getpixel((x, y))
-                    # Convert RGB888 to RGB565
                     rgb565 = ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3)
-                    pixels.append(rgb565 & 0xFF)
                     pixels.append((rgb565 >> 8) & 0xFF)
+                    pixels.append(rgb565 & 0xFF)
                 
                 # Update progress for large images
                 if y % 20 == 0:
@@ -183,7 +182,7 @@ class ImageFlasherApp:
                 raise ValueError("No serial port selected")
             
             cmd = [
-                "esptool.py",
+                "python", "-m", "esptool",
                 "--chip", "esp32s3",
                 "--port", port,
                 "--baud", "460800",

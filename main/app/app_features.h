@@ -39,6 +39,10 @@ void profile_1_process_knob_event(void *event);
  */
 void volume_control_process_knob_event(void *event);
 
+
+void cdc_print(const char* str);
+
+
 #ifdef __cplusplus
 }
 #endif

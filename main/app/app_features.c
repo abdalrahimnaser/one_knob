@@ -13,6 +13,163 @@
 #include "tusb_cdc_acm.h"
 #include "nvs_flash.h"
 #include "ui_dynamic.h"
+////////////////////
+static const char *TAG = "app_features";
+///////////////////
+/// helper print function
+void cdc_print(const char* str) {
+    for(int i = 0; i < 20; i++) {
+        tud_cdc_write(str, strlen(str));
+        tud_cdc_write_flush();
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
+////////////////////////////
+
+#include "esp_partition.h"
+#include "esp_flash.h"
+
+#define IMAGE_FLASH_ADDRESS 0x311000
+#define MAX_IMAGE_SIZE (466*466*2 + 8)  // Image size plus header
+
+// Static buffer for image data
+static uint8_t *image_data = NULL;
+static lv_img_dsc_t custom_image = {
+    .header.always_zero = 0,
+    .header.w = 0,
+    .header.h = 0,
+    .header.cf = LV_IMG_CF_TRUE_COLOR,
+    .data_size = 0,
+    .data = NULL
+};
+
+bool load_custom_image_from_flash(void) {
+    // Find the custom_images partition
+    const esp_partition_t *image_partition = esp_partition_find_first(
+        ESP_PARTITION_TYPE_DATA, ESP_PARTITION_SUBTYPE_DATA_SPIFFS, "custom_images");
+    
+    if (!image_partition) {
+        ESP_LOGE(TAG, "Failed to find custom_images partition");
+        cdc_print("Failed to find custom_images partition");
+        return false;
+    }
+
+    // Allocate memory for image if not already done
+    if (image_data == NULL) {
+        image_data = heap_caps_malloc(MAX_IMAGE_SIZE, MALLOC_CAP_8BIT);
+        if (image_data == NULL) {
+            ESP_LOGE(TAG, "Failed to allocate memory for image");
+            cdc_print("Failed to allocate memory for image");
+            return false;
+        }
+    }
+    
+    // Read image header first (8 bytes)
+    esp_err_t err = esp_partition_read(image_partition, 0, image_data, 8);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to read image header from flash: %d", err);
+        cdc_print("Failed to read image header from flash");
+        return false;
+    }
+    
+    // Parse header
+    uint16_t width = *(uint16_t*)image_data;
+    uint16_t height = *(uint16_t*)(image_data + 2);
+    uint8_t format = *(uint8_t*)(image_data + 4);
+    
+    // Validate header
+    if (width == 0 || width > 466 || height == 0 || height > 466 || format != LV_IMG_CF_TRUE_COLOR) {
+        ESP_LOGE(TAG, "Invalid image header: %dx%d, format %d", width, height, format);
+        cdc_print("Invalid image header");
+        return false;
+    }
+    
+    // Calculate data size
+    size_t data_size = width * height * 2;  // 16-bit color
+    
+    // Read full image
+    err = esp_partition_read(image_partition, 8, image_data + 8, data_size);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to read image data from flash: %d", err);
+        cdc_print("Failed to read image data from flash");
+        return false;
+    }
+    
+    // Update image descriptor
+    custom_image.header.w = width;
+    custom_image.header.h = height;
+    custom_image.header.cf = format;
+    custom_image.data_size = data_size;
+    custom_image.data = image_data + 8;  // Skip header
+    
+    ESP_LOGI(TAG, "Custom image loaded from flash: %dx%d", width, height);
+    cdc_print("Custom image loaded from flash");
+    return true;
+}
+
+void apply_custom_image(void) {
+    ESP_LOGI(TAG, "Attempting to apply custom image to UI");
+    
+    // Check if we have valid image data
+    if (custom_image.data == NULL || custom_image.data_size == 0) {
+        ESP_LOGW(TAG, "No valid image data available to apply");
+        return;
+    }
+    
+    // Log image details
+    ESP_LOGI(TAG, "Image details: %dx%d pixels, format %d, %d bytes", 
+             custom_image.header.w, custom_image.header.h, 
+             custom_image.header.cf, custom_image.data_size);
+    
+    // Check if UI element exists
+    if (ui_Image2 == NULL) {
+        ESP_LOGE(TAG, "UI Image element (ui_Image2) not found!");
+        return;
+    }
+    
+    // Store the previous source to check if update is needed
+    const void *prev_src = lv_img_get_src(ui_Image2);
+    if (prev_src == &custom_image) {
+        ESP_LOGI(TAG, "Image already set to custom image, no update needed");
+        return;
+    }
+    
+    // Apply the image to the UI element
+    lv_img_set_src(ui_Image2, &custom_image);
+    
+    // Force a redraw of the image object
+    lv_obj_invalidate(ui_Image2);
+    
+    // Make sure the parent screen is visible
+    lv_obj_t *parent_screen = lv_obj_get_parent(ui_Image2);
+    if (parent_screen != NULL && parent_screen != lv_scr_act()) {
+        ESP_LOGI(TAG, "Switching to screen containing the image");
+        lv_scr_load(parent_screen);
+    }
+    
+    // Force a full screen update
+    lv_refr_now(NULL);
+    
+    // Verify the image was applied correctly
+    const void *current_src = lv_img_get_src(ui_Image2);
+    if (current_src == &custom_image) {
+        ESP_LOGI(TAG, "Custom image successfully applied to UI");
+    } else {
+        ESP_LOGW(TAG, "Failed to apply custom image - source mismatch");
+    }
+    
+    // If using a display driver with a flush callback, you might need to call it manually
+    // display_flush_pending();
+}
+
+
+
+
+////////////////////////////
+
+
+
 
 #define REPORT_ID_CONSUMER_CONTROL 3 
 
@@ -35,7 +192,6 @@ enum
 
 
 #define APP_BUTTON (GPIO_NUM_0)
-static const char *TAG = "app_features";
 
 /************* TinyUSB descriptors ****************/
 
@@ -242,8 +398,10 @@ void volume_control_process_knob_event(void *event)
             if (volume_level < 0) {
                 volume_level = 0;
             }
-            ESP_LOGI(TAG, "Volume DOWN - Level: %d%%", volume_level);
+            cdc_print("Volume DOWN");
             send_consumer_control(HID_USAGE_CONSUMER_VOLUME_DECREMENT, volume_level);
+
+
         }
     }
     else if (event_type == 4) { // KNOB_ZERO
@@ -259,6 +417,9 @@ void volume_control_process_knob_event(void *event)
 
 esp_err_t app_features_init(void)
 {
+    // Load user configuration first
+    load_user_config();
+
     // Initialize button that will trigger HID reports
     const gpio_config_t boot_button_config = {
         .pin_bit_mask = BIT64(APP_BUTTON),
@@ -334,6 +495,15 @@ esp_err_t app_features_init(void)
 
     ESP_ERROR_CHECK(tusb_cdc_acm_init(&acm_cfg));
 
+
+        // Load custom image from flash
+    if (load_custom_image_from_flash()) {
+        apply_custom_image();
+    }
+    
+
+
     return ESP_OK;
 }
+
 
