@@ -57,7 +57,7 @@ extern lv_obj_t * ui_Arc1;
 extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-LV_IMG_DECLARE(ui_img_bg_png);    // assets/bg.png
+LV_IMG_DECLARE(ui_img_bh2_png);    // assets/bh2.png
 LV_IMG_DECLARE(ui_img_clock_sec_png);    // assets/clock_sec.png
 LV_IMG_DECLARE(ui_img_clock_min_png);    // assets/clock_min.png
 LV_IMG_DECLARE(ui_img_clock_hour_png);    // assets/clock_hour.png

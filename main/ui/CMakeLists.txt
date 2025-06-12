@@ -1,5 +1,4 @@
-SET(SOURCES components/ui_comp_arc2.c
-    components/ui_comp_clockgroup.c
+SET(SOURCES components/ui_comp_clockgroup.c
     components/ui_comp.c
     screens/ui_Screen1.c
     screens/ui_Screen2.c
@@ -8,7 +7,7 @@ SET(SOURCES components/ui_comp_arc2.c
     ui.c
     components/ui_comp_hook.c
     ui_helpers.c
-    images/ui_img_bg_png.c
+    images/ui_img_bh2_png.c
     images/ui_img_clock_sec_png.c
     images/ui_img_clock_min_png.c
     images/ui_img_clock_hour_png.c

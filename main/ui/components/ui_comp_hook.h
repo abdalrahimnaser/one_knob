@@ -10,7 +10,6 @@
 extern "C" {
 #endif
 
-void ui_comp_Arc2_create_hook(lv_obj_t * comp);
 void ui_comp_clockgroup_create_hook(lv_obj_t * comp);
 
 #ifdef __cplusplus

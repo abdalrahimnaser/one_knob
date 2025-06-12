@@ -13,6 +13,7 @@
 #include "tusb_cdc_acm.h"
 #include "nvs_flash.h"
 #include "ui_dynamic.h"
+
 ////////////////////
 static const char *TAG = "app_features";
 ///////////////////
@@ -164,13 +165,7 @@ void apply_custom_image(void) {
 
 
 ////////////////////////////
-
-
-
-
 #define REPORT_ID_CONSUMER_CONTROL 3 
-
-
 
 enum
 {
@@ -184,10 +179,6 @@ enum
 #define EPNUM_CDC_OUT 0x02
 #define EPNUM_CDC_IN 0x82
 #define EPNUM_HID 0x83
-
-
-
-
 #define APP_BUTTON (GPIO_NUM_0)
 
 /************* TinyUSB descriptors ****************/
@@ -269,19 +260,6 @@ void tinyusb_cdc_rx_callback(int itf, cdcacm_event_t *event)
         process_usage_input((char*)buf);
     }
 }
-
-
-// Volume control parameters
-static int volume_level = 50;          // Current volume (0-100%)
-//static const int VOLUME_STEP = 2;      // Change per knob tick
-static bool volume_debounce = false;   // Simple debounce flag
-
-/// NOTE:
-/// FOR LATER, IF YOU WANNA ENHANCE DEBOUNCE, TRY TO REPLICATE (OR FIND IF ALREADY THERE)
-/// PRESS() FUNCTION, IT LOOKS FOR AN EMPTY SLOT THE KEYBOARD TASK QUEUE,
-/// AND THEN ADDS THE KEYCODE TO THE QUEUE. (I THINK)
-/// READ CONSUMER::PRESS() IN CONSUMERAPI.HPP (HID-PROJECT.H)
-/// 
 
 /////////////////////profile 1/////////////////////
 static void send_hid_macro(uint8_t code, uint8_t modifier)
