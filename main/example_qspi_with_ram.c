@@ -60,7 +60,7 @@ static bool timer_button_pressed = false;
 
 static bool recording = false;
 
-bool profile_1_selected = true; // if true profile 1 is selected else it's volume control
+bool profile_1_selected = false; // if true profile 1 is selected else it's volume control
 
 
 
@@ -448,7 +448,7 @@ static void button_event_cb(void *arg, void *data)
 {
     ESP_LOGI(TAG, "Button event %s", button_event_table[(button_event_t)data]);
     
-    if ((button_event_t)data == BUTTON_LONG_PRESS_START) {
+    if ((button_event_t)data == BUTTON_PRESS_DOWN) {
         profile_1_selected = !profile_1_selected;
 
     }

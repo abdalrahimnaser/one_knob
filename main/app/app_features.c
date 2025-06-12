@@ -192,8 +192,6 @@ enum
 
 /************* TinyUSB descriptors ****************/
 
-#define TUSB_DESC_TOTAL_LEN      (TUD_CONFIG_DESC_LEN + CFG_TUD_HID * TUD_HID_DESC_LEN + CFG_TUD_CDC * TUD_CDC_DESC_LEN)
-
 /**
  * @brief HID report descriptor
  */
@@ -275,7 +273,7 @@ void tinyusb_cdc_rx_callback(int itf, cdcacm_event_t *event)
 
 // Volume control parameters
 static int volume_level = 50;          // Current volume (0-100%)
-static const int VOLUME_STEP = 2;      // Change per knob tick
+//static const int VOLUME_STEP = 2;      // Change per knob tick
 static bool volume_debounce = false;   // Simple debounce flag
 
 /// NOTE:
@@ -319,101 +317,60 @@ void profile_1_process_knob_event(void *event)
 
 /////////////////////volume control/////////////////////
 
-// Task handle for arc display updates
-static TaskHandle_t arc_display_task_handle = NULL;
 
 // Queue handle for volume updates
 static QueueHandle_t volume_queue = NULL;
 
-// Timer for auto-hiding the arc
-static TimerHandle_t arc_hide_timer = NULL;
+static TaskHandle_t volume_control_task_handle = NULL;
 
-// Timer callback to hide the arc
-static void arc_hide_timer_callback(TimerHandle_t xTimer) {
-    lv_obj_add_flag(ui_Arc1, LV_OBJ_FLAG_HIDDEN);
-    _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen1_screen_init);
-}
 
-static void arc_display_task(void *pvParameters) {
-    int volume_level;
+
+static void volume_control_task(void *pvParameters) {
+    uint16_t usage_code;
     while(1) {
-        if(xQueueReceive(volume_queue, &volume_level, portMAX_DELAY)) {
-            //show screen4
-            _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen4_screen_init);
+        if(xQueueReceive(volume_queue, &usage_code, portMAX_DELAY)) {
+            cdc_print("sending consumer control\n");
 
-            // Show arc and update value
-            lv_obj_clear_flag(ui_Arc1, LV_OBJ_FLAG_HIDDEN);
-            lv_arc_set_value(ui_Arc1, volume_level);
-            lv_event_send(ui_Arc1, LV_EVENT_VALUE_CHANGED, 0);
+            // Send the consumer control code
+            tud_hid_report(REPORT_ID_CONSUMER_CONTROL, &usage_code, 2);
+            
+            // Release the control
+            uint16_t empty_key = 0;
+            tud_hid_report(REPORT_ID_CONSUMER_CONTROL, &empty_key, 2);
 
-            // Reset the hide timer
-            xTimerReset(arc_hide_timer, 0);
         }
     }
 }
 
-static void update_arc_display(int volume_level) {
-    // Send volume level to the queue
-    xQueueSend(volume_queue, &volume_level, 0);
-}
 
-static void send_consumer_control(uint16_t usage_code, int volume_level){
-    // Send the consumer control code
-    tud_hid_report(REPORT_ID_CONSUMER_CONTROL, &usage_code, 2);
-    
-    // Queue the arc update
-    update_arc_display(volume_level);
 
-    // Small delay to ensure the command is registered
-    vTaskDelay(pdMS_TO_TICKS(50));
-    
-    // Release the control
-    uint16_t empty_key = 0;
-    tud_hid_report(REPORT_ID_CONSUMER_CONTROL, &empty_key, 2);
+static void send_consumer_control(uint16_t usage_code){
+    BaseType_t result = xQueueSend(volume_queue, &usage_code, 0);
+    if (result == pdPASS) {
+        cdc_print("Queue send SUCCESS\n");
+    } else {
+        cdc_print("Queue send FAILED\n");
+    }
 }
 
 void volume_control_process_knob_event(void *event)
 {
-    // Simple debounce protection
-    if (volume_debounce) {
-        return;
-    }
-    
     // Get event type
     int event_type = (int)event;
     
+    cdc_print("volume control process knob event\n");
+    
     // Process volume control
     if (event_type == 0) { // KNOB_LEFT
-        if (volume_level < 100) {
-            volume_level += VOLUME_STEP;
-            if (volume_level > 100) {
-                volume_level = 100;
-            }
-            ESP_LOGI(TAG, "Volume UP - Level: %d%%", volume_level);
-            send_consumer_control(HID_USAGE_CONSUMER_VOLUME_INCREMENT, volume_level);
-        }
+     send_consumer_control(HID_USAGE_CONSUMER_VOLUME_INCREMENT);
     } 
     else if (event_type == 1) { // KNOB_RIGHT
-        if (volume_level > 0) {
-            volume_level -= VOLUME_STEP;
-            if (volume_level < 0) {
-                volume_level = 0;
-            }
-            cdc_print("Volume DOWN");
-            send_consumer_control(HID_USAGE_CONSUMER_VOLUME_DECREMENT, volume_level);
-
-
-        }
+     send_consumer_control(HID_USAGE_CONSUMER_VOLUME_DECREMENT);
     }
-    else if (event_type == 4) { // KNOB_ZERO
-        send_consumer_control(HID_USAGE_CONSUMER_MUTE, volume_level);
-        ESP_LOGI(TAG, "Volume MUTE");
+    else  { 
+        cdc_print("ELSE\n");
     }
-    
-    // Apply debounce with optimized delay for smooth volume control
-    volume_debounce = true;
-    vTaskDelay(30 / portTICK_PERIOD_MS);  // 30ms debounce - fast enough for smooth control but prevents bounce
-    volume_debounce = false;
+
 }
 
 esp_err_t app_features_init(void)
@@ -435,36 +392,26 @@ esp_err_t app_features_init(void)
     init_usage_display();
     
     // Create queue for volume updates
-    volume_queue = xQueueCreate(5, sizeof(int));
+    // 512 is a bit too much so consider reducing it
+    volume_queue = xQueueCreate(128, sizeof(uint16_t));
     if (volume_queue == NULL) {
         ESP_LOGE(TAG, "Failed to create volume queue");
         return ESP_FAIL;
     }
 
-    // Create timer for auto-hiding the arc
-    arc_hide_timer = xTimerCreate(
-        "arc_hide",           // Timer name
-        pdMS_TO_TICKS(5000),  // 500ms period
-        pdFALSE,             // One-shot timer
-        0,                   // Timer ID
-        arc_hide_timer_callback  // Callback function
-    );
-    if (arc_hide_timer == NULL) {
-        ESP_LOGE(TAG, "Failed to create arc hide timer");
-        return ESP_FAIL;
-    }
+
 
     // Create task for arc display updates
     BaseType_t ret = xTaskCreate(
-        arc_display_task,    // Task function
-        "arc_display",       // Task name
+        volume_control_task,    // Task function
+        "volume_control",       // Task name
         2048,               // Stack size
         NULL,               // Task parameters
         5,                  // Task priority
-        &arc_display_task_handle  // Task handle
+        &volume_control_task_handle  // Task handle
     );
     if (ret != pdPASS) {
-        ESP_LOGE(TAG, "Failed to create arc display task");
+        ESP_LOGE(TAG, "Failed to create volume control task");
         return ESP_FAIL;
     }
 
