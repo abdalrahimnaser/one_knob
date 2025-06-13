@@ -10,6 +10,10 @@ uint8_t code_left = DEFAULT_LEFT_KEY;
 uint8_t code_right = DEFAULT_RIGHT_KEY;
 uint8_t modifier_left = DEFAULT_LEFT_MODIFIER;
 uint8_t modifier_right = DEFAULT_RIGHT_MODIFIER;
+uint8_t code_left2 = DEFAULT_LEFT_KEY;  // Profile 2
+uint8_t code_right2 = DEFAULT_RIGHT_KEY;  // Profile 2
+uint8_t modifier_left2 = DEFAULT_LEFT_MODIFIER;  // Profile 2
+uint8_t modifier_right2 = DEFAULT_RIGHT_MODIFIER;  // Profile 2
 
 void load_user_config(void) {
     // Find the user_config partition
@@ -23,6 +27,10 @@ void load_user_config(void) {
             uint8_t left_mod;
             uint8_t right_key;
             uint8_t right_mod;
+            uint8_t left_key2;  // Profile 2
+            uint8_t left_mod2;  // Profile 2
+            uint8_t right_key2;  // Profile 2
+            uint8_t right_mod2;  // Profile 2
             uint32_t magic; // Magic number to verify valid config
         } config;
         
@@ -34,6 +42,10 @@ void load_user_config(void) {
             modifier_left = config.left_mod;
             code_right = config.right_key;
             modifier_right = config.right_mod;
+            code_left2 = config.left_key2;  // Profile 2
+            modifier_left2 = config.left_mod2;  // Profile 2
+            code_right2 = config.right_key2;  // Profile 2
+            modifier_right2 = config.right_mod2;  // Profile 2
             ESP_LOGI(TAG, "User configuration loaded successfully");
         } else {
             ESP_LOGW(TAG, "Invalid configuration or read error, using defaults");

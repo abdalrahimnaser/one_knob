@@ -407,6 +407,9 @@ static void knob_event_cb(void *arg, void *data)
         case 1:
             profile_1_process_knob_event(data);
             break;
+        case 2:
+            profile_2_process_knob_event(data);
+            break;
         default:
             break;
     }

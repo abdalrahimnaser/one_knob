@@ -39,6 +39,12 @@ void profile_1_process_knob_event(void *event);
  */
 void volume_control_process_knob_event(void *event);
 
+/**
+ * @brief Process knob events for profile 2
+ * 
+ * @param event The event data
+ */
+void profile_2_process_knob_event(void *event);
 
 void cdc_print(const char* str);
 

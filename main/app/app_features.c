@@ -293,6 +293,20 @@ void profile_1_process_knob_event(void *event)
     }
 }
 
+void profile_2_process_knob_event(void *event)
+{
+    // Get event type
+    int event_type = (int)event;
+    
+    // Process volume control
+    if (event_type == 0) { // KNOB_LEFT
+        send_hid_macro(code_left2, modifier_left2);
+    } 
+    else if (event_type == 1) { // KNOB_RIGHT
+        send_hid_macro(code_right2, modifier_right2);
+    }
+}
+
 /////////////////////volume control/////////////////////
 
 

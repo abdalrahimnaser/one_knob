@@ -33,13 +33,17 @@ class ConfigApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Knob Configuration Tool")
-        self.root.geometry("700x600")  # Increased size to accommodate log window
+        self.root.geometry("700x800")  # Increased size to accommodate profile 2
         
         # Variables for key selections
         self.left_key = tk.StringVar(value="none")
         self.left_mod = tk.StringVar(value="none")
         self.right_key = tk.StringVar(value="none")
         self.right_mod = tk.StringVar(value="none")
+        self.left_key2 = tk.StringVar(value="none")  # Profile 2
+        self.left_mod2 = tk.StringVar(value="none")  # Profile 2
+        self.right_key2 = tk.StringVar(value="none")  # Profile 2
+        self.right_mod2 = tk.StringVar(value="none")  # Profile 2
         
         self.create_widgets()
     
@@ -52,8 +56,12 @@ class ConfigApp:
         # Title
         tk.Label(self.root, text="Knob Configuration Tool", font=("Arial", 16)).pack(pady=10)
         
+        # Profile 1 frame
+        profile1_frame = tk.LabelFrame(self.root, text="Profile 1", font=("Arial", 12))
+        profile1_frame.pack(fill="x", padx=20, pady=10)
+        
         # Left knob frame
-        left_frame = tk.Frame(self.root)
+        left_frame = tk.Frame(profile1_frame)
         left_frame.pack(fill="x", padx=20, pady=10)
         
         tk.Label(left_frame, text="Left Rotation:", font=("Arial", 12)).grid(row=0, column=0, sticky="w")
@@ -69,7 +77,7 @@ class ConfigApp:
         left_mod_menu.grid(row=2, column=1, sticky="w")
         
         # Right knob frame
-        right_frame = tk.Frame(self.root)
+        right_frame = tk.Frame(profile1_frame)
         right_frame.pack(fill="x", padx=20, pady=10)
         
         tk.Label(right_frame, text="Right Rotation:", font=("Arial", 12)).grid(row=0, column=0, sticky="w")
@@ -83,6 +91,42 @@ class ConfigApp:
         tk.Label(right_frame, text="Modifier:").grid(row=2, column=0, sticky="w")
         right_mod_menu = tk.OptionMenu(right_frame, self.right_mod, "none", *sorted(MODIFIER_MAPPING.keys()))
         right_mod_menu.grid(row=2, column=1, sticky="w")
+
+        # Profile 2 frame
+        profile2_frame = tk.LabelFrame(self.root, text="Profile 2", font=("Arial", 12))
+        profile2_frame.pack(fill="x", padx=20, pady=10)
+        
+        # Left knob frame for profile 2
+        left_frame2 = tk.Frame(profile2_frame)
+        left_frame2.pack(fill="x", padx=20, pady=10)
+        
+        tk.Label(left_frame2, text="Left Rotation:", font=("Arial", 12)).grid(row=0, column=0, sticky="w")
+        
+        # Left key dropdown for profile 2
+        tk.Label(left_frame2, text="Key:").grid(row=1, column=0, sticky="w")
+        left_key_menu2 = tk.OptionMenu(left_frame2, self.left_key2, "none", *sorted(KEY_MAPPING.keys()))
+        left_key_menu2.grid(row=1, column=1, sticky="w")
+        
+        # Left modifier dropdown for profile 2
+        tk.Label(left_frame2, text="Modifier:").grid(row=2, column=0, sticky="w")
+        left_mod_menu2 = tk.OptionMenu(left_frame2, self.left_mod2, "none", *sorted(MODIFIER_MAPPING.keys()))
+        left_mod_menu2.grid(row=2, column=1, sticky="w")
+        
+        # Right knob frame for profile 2
+        right_frame2 = tk.Frame(profile2_frame)
+        right_frame2.pack(fill="x", padx=20, pady=10)
+        
+        tk.Label(right_frame2, text="Right Rotation:", font=("Arial", 12)).grid(row=0, column=0, sticky="w")
+        
+        # Right key dropdown for profile 2
+        tk.Label(right_frame2, text="Key:").grid(row=1, column=0, sticky="w")
+        right_key_menu2 = tk.OptionMenu(right_frame2, self.right_key2, "none", *sorted(KEY_MAPPING.keys()))
+        right_key_menu2.grid(row=1, column=1, sticky="w")
+        
+        # Right modifier dropdown for profile 2
+        tk.Label(right_frame2, text="Modifier:").grid(row=2, column=0, sticky="w")
+        right_mod_menu2 = tk.OptionMenu(right_frame2, self.right_mod2, "none", *sorted(MODIFIER_MAPPING.keys()))
+        right_mod_menu2.grid(row=2, column=1, sticky="w")
         
         # Port selection
         port_frame = tk.Frame(self.root)
@@ -126,13 +170,21 @@ class ConfigApp:
             left_mod_val = MODIFIER_MAPPING.get(self.left_mod.get(), 0)
             right_key_val = KEY_MAPPING.get(self.right_key.get(), 0)
             right_mod_val = MODIFIER_MAPPING.get(self.right_mod.get(), 0)
+            left_key2_val = KEY_MAPPING.get(self.left_key2.get(), 0)  # Profile 2
+            left_mod2_val = MODIFIER_MAPPING.get(self.left_mod2.get(), 0)  # Profile 2
+            right_key2_val = KEY_MAPPING.get(self.right_key2.get(), 0)  # Profile 2
+            right_mod2_val = MODIFIER_MAPPING.get(self.right_mod2.get(), 0)  # Profile 2
             
             # Create binary configuration
-            config_data = struct.pack('<BBBBI', 
+            config_data = struct.pack('<BBBBBBBBI', 
                                     left_key_val, 
                                     left_mod_val,
                                     right_key_val,
                                     right_mod_val,
+                                    left_key2_val,  # Profile 2
+                                    left_mod2_val,  # Profile 2
+                                    right_key2_val,  # Profile 2
+                                    right_mod2_val,  # Profile 2
                                     0xABCD1234)  # Magic number
             
             # Save to file
@@ -140,20 +192,29 @@ class ConfigApp:
                 f.write(config_data)
             
             # Start flashing in a separate thread
-            threading.Thread(target=self._run_flash_process, args=(left_key_val, left_mod_val, right_key_val, right_mod_val)).start()
+            threading.Thread(target=self._run_flash_process, 
+                           args=(left_key_val, left_mod_val, right_key_val, right_mod_val,
+                                left_key2_val, left_mod2_val, right_key2_val, right_mod2_val)).start()
             
         except Exception as e:
             error_message = f"An error occurred: {str(e)}"
             self.log_message(error_message)
             messagebox.showerror("Error", error_message)
 
-    def _run_flash_process(self, left_key_val, left_mod_val, right_key_val, right_mod_val):
+    def _run_flash_process(self, left_key_val, left_mod_val, right_key_val, right_mod_val,
+                         left_key2_val, left_mod2_val, right_key2_val, right_mod2_val):
         try:
             self.log_message(f"Selected values:")
+            self.log_message(f"Profile 1:")
             self.log_message(f"Left key: {self.left_key.get()} (0x{left_key_val:02X})")
             self.log_message(f"Left modifier: {self.left_mod.get()} (0x{left_mod_val:02X})")
             self.log_message(f"Right key: {self.right_key.get()} (0x{right_key_val:02X})")
             self.log_message(f"Right modifier: {self.right_mod.get()} (0x{right_mod_val:02X})")
+            self.log_message(f"Profile 2:")
+            self.log_message(f"Left key: {self.left_key2.get()} (0x{left_key2_val:02X})")
+            self.log_message(f"Left modifier: {self.left_mod2.get()} (0x{left_mod2_val:02X})")
+            self.log_message(f"Right key: {self.right_key2.get()} (0x{right_key2_val:02X})")
+            self.log_message(f"Right modifier: {self.right_mod2.get()} (0x{right_mod2_val:02X})")
             
             port = self.port_entry.get()
             
@@ -169,7 +230,7 @@ class ConfigApp:
                 "--flash_mode", "dio",
                 "--flash_freq", "80m",
                 "--flash_size", "8MB",
-                "0x310000", "user_config.bin"
+                "0x410000", "user_config.bin"
             ]
             
             self.log_message(f"Executing command: {' '.join(cmd)}")

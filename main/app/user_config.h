@@ -14,6 +14,10 @@ extern uint8_t code_left;
 extern uint8_t code_right;
 extern uint8_t modifier_left;
 extern uint8_t modifier_right;
+extern uint8_t code_left2;  // Profile 2
+extern uint8_t code_right2;  // Profile 2
+extern uint8_t modifier_left2;  // Profile 2
+extern uint8_t modifier_right2;  // Profile 2
 
 // Function to load user configuration from partition
 void load_user_config(void);
