@@ -52,6 +52,13 @@ extern lv_obj_t * ui_Screen4;
 extern lv_obj_t * ui_Arc1;
 // CUSTOM VARIABLES
 
+// SCREEN: ui_Screen5
+void ui_Screen5_screen_init(void);
+extern lv_obj_t * ui_Screen5;
+extern lv_obj_t * ui_RollerSTYLED2;
+extern lv_obj_t * ui_Label3;
+// CUSTOM VARIABLES
+
 // EVENTS
 
 extern lv_obj_t * ui____initial_actions0;

@@ -42,6 +42,13 @@ lv_obj_t * ui_Screen4;
 lv_obj_t * ui_Arc1;
 // CUSTOM VARIABLES
 
+// SCREEN: ui_Screen5
+void ui_Screen5_screen_init(void);
+lv_obj_t * ui_Screen5;
+lv_obj_t * ui_RollerSTYLED2;
+lv_obj_t * ui_Label3;
+// CUSTOM VARIABLES
+
 // EVENTS
 lv_obj_t * ui____initial_actions0;
 
@@ -99,6 +106,7 @@ void ui_init(void)
     ui_Screen2_screen_init();
     ui_Screen3_screen_init();
     ui_Screen4_screen_init();
+    ui_Screen5_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_Screen1);
 }

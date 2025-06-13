@@ -62,6 +62,7 @@ static bool recording = false;
 
 bool profile_1_selected = false; // if true profile 1 is selected else it's volume control
 
+int current_profile = 0;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -393,11 +394,24 @@ static void knob_event_cb(void *arg, void *data)
     ESP_LOGI(TAG, "knob event %s, %d", knob_event_table[(knob_event_t)data], iot_knob_get_count_value(knob));
     // LVGL_knob_event(data);
     // app_process_knob_event(data);
-    if (profile_1_selected) {
-        profile_1_process_knob_event(data);
-    } else {
-        volume_control_process_knob_event(data);
+    // if (profile_1_selected) {
+    //     proile_1_process_knob_event(data);
+    // } else {
+    //     volume_control_process_knob_event(data);
+    // }
+
+    switch(current_profile){
+        case 0:
+            volume_control_process_knob_event(data);
+            break;
+        case 1:
+            profile_1_process_knob_event(data);
+            break;
+        default:
+            break;
     }
+
+    
 }
 
 void knob_init(uint32_t encoder_a, uint32_t encoder_b)
@@ -448,9 +462,24 @@ static void button_event_cb(void *arg, void *data)
 {
     ESP_LOGI(TAG, "Button event %s", button_event_table[(button_event_t)data]);
     
-    if ((button_event_t)data == BUTTON_PRESS_DOWN) {
-        profile_1_selected = !profile_1_selected;
-
+    if ((button_event_t)data == BUTTON_LONG_PRESS_START) {
+        if (lv_scr_act() != ui_Screen5) {
+        _ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen5_screen_init);
+        }
+        else{
+            current_profile = lv_roller_get_selected(ui_RollerSTYLED2);
+            _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen1_screen_init);
+            
+            if (current_profile == 0) {
+                cdc_print("volume profile selected");
+            }
+            else if (current_profile == 1) {
+                cdc_print("profile 1 selected");
+            }
+            else if (current_profile == 2) {
+                cdc_print("profile 2 selected");
+            }
+        }
     }
 
 
