@@ -30,9 +30,12 @@ void cdc_print(const char* str) {
 
 #define IMAGE_FLASH_ADDRESS 0x311000
 #define MAX_IMAGE_SIZE (466*466*2 + 8)  // Image size plus header
+#define MAX_GIF_FRAMES 13
+#define MAX_GIF_SIZE (466*466*2*MAX_GIF_FRAMES + 8)  // Max size for all frames plus header
 
 // Static buffer for image data
 static uint8_t *image_data = NULL;
+static uint8_t *gif_data = NULL;
 static lv_img_dsc_t custom_image = {
     .header.always_zero = 0,
     .header.w = 0,
@@ -41,6 +44,17 @@ static lv_img_dsc_t custom_image = {
     .data_size = 0,
     .data = NULL
 };
+
+// GIF animation data
+static struct {
+    uint16_t width;
+    uint16_t height;
+    uint8_t frame_count;
+    uint8_t current_frame;
+    uint32_t frame_size;
+    uint8_t *frames[MAX_GIF_FRAMES];
+    lv_timer_t *timer;
+} gif_animation = {0};
 
 bool load_custom_image_from_flash(void) {
     // Find the custom_images partition
@@ -106,6 +120,89 @@ bool load_custom_image_from_flash(void) {
     return true;
 }
 
+bool load_custom_gif_from_flash(void) {
+    // Find the custom_gifs partition
+    const esp_partition_t *gif_partition = esp_partition_find_first(
+        ESP_PARTITION_TYPE_DATA, ESP_PARTITION_SUBTYPE_DATA_SPIFFS, "custom_gifs");
+    
+    if (!gif_partition) {
+        ESP_LOGE(TAG, "Failed to find custom_gifs partition");
+        cdc_print("Failed to find custom_gifs partition");
+        return false;
+    }
+
+    // Allocate memory for GIF if not already done
+    if (gif_data == NULL) {
+        gif_data = heap_caps_malloc(MAX_GIF_SIZE, MALLOC_CAP_8BIT);
+        if (gif_data == NULL) {
+            ESP_LOGE(TAG, "Failed to allocate memory for GIF");
+            cdc_print("Failed to allocate memory for GIF");
+            return false;
+        }
+    }
+    
+    // Read GIF header first (8 bytes)
+    esp_err_t err = esp_partition_read(gif_partition, 0, gif_data, 8);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to read GIF header from flash: %d", err);
+        cdc_print("Failed to read GIF header from flash");
+        return false;
+    }
+    
+    // Parse header
+    gif_animation.width = *(uint16_t*)gif_data;
+    gif_animation.height = *(uint16_t*)(gif_data + 2);
+    gif_animation.frame_count = *(uint8_t*)(gif_data + 4);
+    
+    // Validate header
+    if (gif_animation.width == 0 || gif_animation.width > 466 || 
+        gif_animation.height == 0 || gif_animation.height > 466 || 
+        gif_animation.frame_count == 0 || gif_animation.frame_count > MAX_GIF_FRAMES) {
+        ESP_LOGE(TAG, "Invalid GIF header: %dx%d, frames %d", 
+                 gif_animation.width, gif_animation.height, gif_animation.frame_count);
+        cdc_print("Invalid GIF header");
+        return false;
+    }
+    
+    // Calculate frame size
+    gif_animation.frame_size = gif_animation.width * gif_animation.height * 2;  // 16-bit color
+    
+    // Read all frames
+    uint32_t offset = 8;  // Skip header
+    for (int i = 0; i < gif_animation.frame_count; i++) {
+        gif_animation.frames[i] = gif_data + offset;
+        err = esp_partition_read(gif_partition, offset, gif_animation.frames[i], gif_animation.frame_size);
+        if (err != ESP_OK) {
+            ESP_LOGE(TAG, "Failed to read frame %d from flash: %d", i, err);
+            cdc_print("Failed to read frame from flash");
+            return false;
+        }
+        offset += gif_animation.frame_size;
+    }
+    
+    gif_animation.current_frame = 0;
+    
+    ESP_LOGI(TAG, "Custom GIF loaded from flash: %dx%d, %d frames", 
+             gif_animation.width, gif_animation.height, gif_animation.frame_count);
+    cdc_print("Custom GIF loaded from flash");
+    return true;
+}
+
+static void gif_timer_cb(lv_timer_t *timer) {
+    if (gif_animation.frame_count == 0) return;
+    
+    // Update current frame
+    gif_animation.current_frame = (gif_animation.current_frame + 1) % gif_animation.frame_count;
+    
+    // Update image data
+    custom_image.data = gif_animation.frames[gif_animation.current_frame];
+    
+    // Force redraw
+    if (ui_GIFseq != NULL) {
+        lv_obj_invalidate(ui_GIFseq);
+    }
+}
+
 void apply_custom_image(void) {
     ESP_LOGI(TAG, "Attempting to apply custom image to UI");
     
@@ -156,13 +253,44 @@ void apply_custom_image(void) {
     } else {
         ESP_LOGW(TAG, "Failed to apply custom image - source mismatch");
     }
-    
-    // If using a display driver with a flush callback, you might need to call it manually
-    // display_flush_pending();
 }
 
-
-
+void apply_custom_gif(void) {
+    ESP_LOGI(TAG, "Attempting to apply custom GIF to UI");
+    
+    // Check if we have valid GIF data
+    if (gif_animation.frame_count == 0 || gif_animation.frames[0] == NULL) {
+        ESP_LOGW(TAG, "No valid GIF data available to apply");
+        return;
+    }
+    
+    // Check if UI element exists
+    if (ui_GIFseq == NULL) {
+        ESP_LOGE(TAG, "UI GIF element (ui_GIFseq) not found!");
+        return;
+    }
+    
+    // Set up the image descriptor for the first frame
+    custom_image.header.w = gif_animation.width;
+    custom_image.header.h = gif_animation.height;
+    custom_image.header.cf = LV_IMG_CF_TRUE_COLOR;
+    custom_image.data_size = gif_animation.frame_size;
+    custom_image.data = gif_animation.frames[0];
+    
+    // Apply the first frame
+    lv_img_set_src(ui_GIFseq, &custom_image);
+    
+    // Create animation timer if it doesn't exist
+    if (gif_animation.timer == NULL) {
+        gif_animation.timer = lv_timer_create(gif_timer_cb, 100, NULL);  // 100ms per frame
+    }
+    
+    // Force a redraw
+    lv_obj_invalidate(ui_GIFseq);
+    
+    ESP_LOGI(TAG, "Custom GIF successfully applied to UI: %dx%d, %d frames", 
+             gif_animation.width, gif_animation.height, gif_animation.frame_count);
+}
 
 ////////////////////////////
 #define REPORT_ID_CONSUMER_CONTROL 3 
@@ -386,14 +514,11 @@ esp_err_t app_features_init(void)
     init_usage_display();
     
     // Create queue for volume updates
-    // 512 is a bit too much so consider reducing it
     volume_queue = xQueueCreate(128, sizeof(uint16_t));
     if (volume_queue == NULL) {
         ESP_LOGE(TAG, "Failed to create volume queue");
         return ESP_FAIL;
     }
-
-
 
     // Create task for arc display updates
     BaseType_t ret = xTaskCreate(
@@ -437,17 +562,14 @@ esp_err_t app_features_init(void)
 
     ESP_ERROR_CHECK(tusb_cdc_acm_init(&acm_cfg));
 
-
-        // Load custom image from flash
-    if (load_custom_image_from_flash()) {
+    // Try to load custom GIF first
+    if (load_custom_gif_from_flash()) {
+        apply_custom_gif();
+    }
+    // If no custom GIF is found, try to load static image
+    else if (load_custom_image_from_flash()) {
         apply_custom_image();
     }
-    
-
-
-    //_ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen5_screen_init);
-    tree_Animation(ui_GIFseq, 0);
-
 
     return ESP_OK;
 }

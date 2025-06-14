@@ -11,11 +11,12 @@ class ImageFlasherApp:
     def __init__(self, root):
         self.root = root
         self.root.title("ESP32 Image Flasher")
-        self.root.geometry("600x550")
+        self.root.geometry("600x600")
         
         self.image_path = None
         self.processed_image = None
-        self.flash_address = "0x311000"  # Default address
+        self.flash_address = "0x511000"  # Default address for static images
+        self.gif_flash_address = "0x711000"  # Address for GIFs
         
         self.create_widgets()
         self.refresh_ports()
@@ -35,6 +36,17 @@ class ImageFlasherApp:
         self.port_combo.grid(row=0, column=1, padx=5, pady=5, sticky="w")
         
         ttk.Button(port_frame, text="Refresh", command=self.refresh_ports).grid(row=0, column=2, padx=5)
+        
+        # Screen selection
+        screen_frame = ttk.LabelFrame(main_frame, text="Screen Selection", padding="5")
+        screen_frame.pack(fill="x", pady=5)
+        
+        ttk.Label(screen_frame, text="Target Screen:").grid(row=0, column=0, sticky="w", padx=5)
+        self.screen_var = tk.StringVar(value="Screen 2 (Static Image)")
+        screen_combo = ttk.Combobox(screen_frame, textvariable=self.screen_var, state="readonly", width=30)
+        screen_combo['values'] = ["Screen 2 (Static Image)", "Screen 6 (GIF)"]
+        screen_combo.grid(row=0, column=1, padx=5, pady=5, sticky="w")
+        screen_combo.bind('<<ComboboxSelected>>', self.on_screen_change)
         
         # Flash address
         addr_frame = ttk.LabelFrame(main_frame, text="Flash Settings", padding="5")
@@ -79,6 +91,18 @@ class ImageFlasherApp:
         status_label = ttk.Label(status_frame, textvariable=self.status_var)
         status_label.pack(side="left", padx=5, fill="x", expand=True)
     
+    def on_screen_change(self, event):
+        if self.screen_var.get() == "Screen 6 (GIF)":
+            self.addr_var.set(self.gif_flash_address)
+            # If an image is already selected, validate it's a GIF
+            if self.image_path and not self.image_path.lower().endswith('.gif'):
+                messagebox.showwarning("Warning", "Screen 6 only supports GIF files. Please select a GIF file.")
+                self.image_path = None
+                self.image_label.config(text="No image selected")
+                self.flash_button.config(state="disabled")
+        else:
+            self.addr_var.set(self.flash_address)
+    
     def refresh_ports(self):
         ports = [p.device for p in serial.tools.list_ports.comports()]
         if ports:
@@ -89,12 +113,23 @@ class ImageFlasherApp:
             self.port_var.set("")
     
     def select_image(self):
+        # Set file types based on selected screen
+        if self.screen_var.get() == "Screen 6 (GIF)":
+            filetypes = [("GIF files", "*.gif")]
+        else:
+            filetypes = [("Image files", "*.png *.jpg *.jpeg *.bmp")]
+        
         file_path = filedialog.askopenfilename(
             title="Select Image",
-            filetypes=[("Image files", "*.png *.jpg *.jpeg *.bmp")]
+            filetypes=filetypes
         )
         
         if not file_path:
+            return
+            
+        # Validate file type for Screen 6
+        if self.screen_var.get() == "Screen 6 (GIF)" and not file_path.lower().endswith('.gif'):
+            messagebox.showerror("Error", "Screen 6 only supports GIF files")
             return
             
         self.image_path = file_path
@@ -111,11 +146,46 @@ class ImageFlasherApp:
     def process_image_preview(self):
         # Open and resize image for preview
         img = Image.open(self.image_path)
+        if img.format == 'GIF':
+            # For GIFs, show first frame
+            img.seek(0)
         img = img.resize((466, 466), Image.LANCZOS)
         
         # Display preview
         self.preview_img = ImageTk.PhotoImage(img)
         self.preview_canvas.create_image(233, 233, image=self.preview_img)
+    
+    def process_gif(self, img):
+        """Process GIF to ensure it meets requirements"""
+        frames = []
+        frame_count = 0
+        
+        try:
+            while True:
+                # Convert frame to RGB if needed
+                frame = img.convert('RGB')
+                frame = frame.resize((466, 466), Image.LANCZOS)
+                
+                # Convert to RGB565
+                pixels = []
+                for y in range(466):
+                    for x in range(466):
+                        r, g, b = frame.getpixel((x, y))
+                        rgb565 = ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3)
+                        pixels.append((rgb565 >> 8) & 0xFF)
+                        pixels.append(rgb565 & 0xFF)
+                
+                frames.append(bytes(pixels))
+                frame_count += 1
+                
+                if frame_count >= 13:  # Limit to 13 frames
+                    break
+                    
+                img.seek(img.tell() + 1)
+        except EOFError:
+            pass
+            
+        return frames, frame_count
     
     def start_flash_thread(self):
         # Disable UI elements during flashing
@@ -132,47 +202,66 @@ class ImageFlasherApp:
             self.progress_var.set(10)
             self.root.update_idletasks()
             
-            # Open and resize image
+            # Open image
             img = Image.open(self.image_path)
-            img = img.resize((466, 466), Image.LANCZOS)
             
-            # Convert to RGB if needed
-            if img.mode != "RGB":
-                img = img.convert("RGB")
-            
-            width, height = img.size
-            self.status_var.set(f"Converting image: {width}x{height}")
-            self.progress_var.set(30)
-            self.root.update_idletasks()
-            
-            # Create binary data
-            header = struct.pack("<HHB", width, height, 4)  # 4 = LV_IMG_CF_TRUE_COLOR
-            padding = b'\x00' * 3  # Padding to make header 8 bytes
-            
-            # Convert pixels to RGB565
-            pixels = []
-            for y in range(height):
-                for x in range(width):
-                    r, g, b = img.getpixel((x, y))
-                    rgb565 = ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3)
-                    pixels.append((rgb565 >> 8) & 0xFF)
-                    pixels.append(rgb565 & 0xFF)
+            if self.screen_var.get() == "Screen 6 (GIF)":
+                # Process GIF
+                frames, frame_count = self.process_gif(img)
                 
-                # Update progress for large images
-                if y % 20 == 0:
-                    progress = 30 + (y / height * 30)
-                    self.progress_var.set(progress)
-                    self.root.update_idletasks()
-            
-            # Create binary file
-            bin_file = "image.bin"
-            with open(bin_file, "wb") as f:
-                f.write(header + padding + bytes(pixels))
-            
-            file_size = os.path.getsize(bin_file)
-            self.status_var.set(f"Created binary file: {bin_file}, size: {file_size} bytes")
-            self.progress_var.set(70)
-            self.root.update_idletasks()
+                # Create binary data
+                header = struct.pack("<HHB", 466, 466, frame_count)  # Width, height, frame count
+                padding = b'\x00' * 3  # Padding to make header 8 bytes
+                
+                # Create binary file
+                bin_file = "gif.bin"
+                with open(bin_file, "wb") as f:
+                    f.write(header + padding)
+                    for frame in frames:
+                        f.write(frame)
+            else:
+                # Process static image
+                img = img.resize((466, 466), Image.LANCZOS)
+                
+                # Convert to RGB if needed
+                if img.mode != "RGB":
+                    img = img.convert("RGB")
+                
+                width, height = img.size
+                self.status_var.set(f"Converting image: {width}x{height}")
+                self.progress_var.set(30)
+                self.root.update_idletasks()
+                
+                # Create binary data
+                header = struct.pack("<HHB", width, height, 4)  # 4 = LV_IMG_CF_TRUE_COLOR
+                padding = b'\x00' * 3  # Padding to make header 8 bytes
+                
+                print(f"Creating image header: width={width}, height={height}, format=4 (LV_IMG_CF_TRUE_COLOR)")
+                
+                # Convert pixels to RGB565
+                pixels = []
+                for y in range(height):
+                    for x in range(width):
+                        r, g, b = img.getpixel((x, y))
+                        rgb565 = ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3)
+                        pixels.append((rgb565 >> 8) & 0xFF)
+                        pixels.append(rgb565 & 0xFF)
+                    
+                    # Update progress for large images
+                    if y % 20 == 0:
+                        progress = 30 + (y / height * 30)
+                        self.progress_var.set(progress)
+                        self.root.update_idletasks()
+                
+                # Create binary file
+                bin_file = "image.bin"
+                with open(bin_file, "wb") as f:
+                    f.write(header + padding + bytes(pixels))
+                
+                file_size = os.path.getsize(bin_file)
+                print(f"Created binary file: {bin_file}, size: {file_size} bytes")
+                print(f"Header size: {len(header + padding)} bytes")
+                print(f"Image data size: {len(pixels)} bytes")
             
             # Flash the image
             port = self.port_var.get()
