@@ -28,7 +28,8 @@ void cdc_print(const char* str) {
 #include "esp_partition.h"
 #include "esp_flash.h"
 
-#define IMAGE_FLASH_ADDRESS 0x311000
+#define IMAGE_FLASH_ADDRESS 0x511000  // Address for static images (custom_images partition)
+#define GIF_FLASH_ADDRESS 0x711000    // Address for GIFs (custom_gifs partition)
 #define MAX_IMAGE_SIZE (466*466*2 + 8)  // Image size plus header
 #define MAX_GIF_FRAMES 13
 #define MAX_GIF_SIZE (466*466*2*MAX_GIF_FRAMES + 8)  // Max size for all frames plus header
@@ -36,7 +37,18 @@ void cdc_print(const char* str) {
 // Static buffer for image data
 static uint8_t *image_data = NULL;
 static uint8_t *gif_data = NULL;
-static lv_img_dsc_t custom_image = {
+
+// Separate image descriptors for static and GIF images
+static lv_img_dsc_t static_image = {
+    .header.always_zero = 0,
+    .header.w = 0,
+    .header.h = 0,
+    .header.cf = LV_IMG_CF_TRUE_COLOR,
+    .data_size = 0,
+    .data = NULL
+};
+
+static lv_img_dsc_t gif_image = {
     .header.always_zero = 0,
     .header.w = 0,
     .header.h = 0,
@@ -109,11 +121,11 @@ bool load_custom_image_from_flash(void) {
     }
     
     // Update image descriptor
-    custom_image.header.w = width;
-    custom_image.header.h = height;
-    custom_image.header.cf = format;
-    custom_image.data_size = data_size;
-    custom_image.data = image_data + 8;  // Skip header
+    static_image.header.w = width;
+    static_image.header.h = height;
+    static_image.header.cf = format;
+    static_image.data_size = data_size;
+    static_image.data = image_data + 8;  // Skip header
     
     ESP_LOGI(TAG, "Custom image loaded from flash: %dx%d", width, height);
     cdc_print("Custom image loaded from flash");
@@ -195,7 +207,7 @@ static void gif_timer_cb(lv_timer_t *timer) {
     gif_animation.current_frame = (gif_animation.current_frame + 1) % gif_animation.frame_count;
     
     // Update image data
-    custom_image.data = gif_animation.frames[gif_animation.current_frame];
+    gif_image.data = gif_animation.frames[gif_animation.current_frame];
     
     // Force redraw
     if (ui_GIFseq != NULL) {
@@ -207,15 +219,15 @@ void apply_custom_image(void) {
     ESP_LOGI(TAG, "Attempting to apply custom image to UI");
     
     // Check if we have valid image data
-    if (custom_image.data == NULL || custom_image.data_size == 0) {
+    if (static_image.data == NULL || static_image.data_size == 0) {
         ESP_LOGW(TAG, "No valid image data available to apply");
         return;
     }
     
     // Log image details
     ESP_LOGI(TAG, "Image details: %dx%d pixels, format %d, %d bytes", 
-             custom_image.header.w, custom_image.header.h, 
-             custom_image.header.cf, custom_image.data_size);
+             static_image.header.w, static_image.header.h, 
+             static_image.header.cf, static_image.data_size);
     
     // Check if UI element exists
     if (ui_Image2 == NULL) {
@@ -225,13 +237,13 @@ void apply_custom_image(void) {
     
     // Store the previous source to check if update is needed
     const void *prev_src = lv_img_get_src(ui_Image2);
-    if (prev_src == &custom_image) {
+    if (prev_src == &static_image) {
         ESP_LOGI(TAG, "Image already set to custom image, no update needed");
         return;
     }
     
     // Apply the image to the UI element
-    lv_img_set_src(ui_Image2, &custom_image);
+    lv_img_set_src(ui_Image2, &static_image);
     
     // Force a redraw of the image object
     lv_obj_invalidate(ui_Image2);
@@ -248,7 +260,7 @@ void apply_custom_image(void) {
     
     // Verify the image was applied correctly
     const void *current_src = lv_img_get_src(ui_Image2);
-    if (current_src == &custom_image) {
+    if (current_src == &static_image) {
         ESP_LOGI(TAG, "Custom image successfully applied to UI");
     } else {
         ESP_LOGW(TAG, "Failed to apply custom image - source mismatch");
@@ -271,14 +283,14 @@ void apply_custom_gif(void) {
     }
     
     // Set up the image descriptor for the first frame
-    custom_image.header.w = gif_animation.width;
-    custom_image.header.h = gif_animation.height;
-    custom_image.header.cf = LV_IMG_CF_TRUE_COLOR;
-    custom_image.data_size = gif_animation.frame_size;
-    custom_image.data = gif_animation.frames[0];
+    gif_image.header.w = gif_animation.width;
+    gif_image.header.h = gif_animation.height;
+    gif_image.header.cf = LV_IMG_CF_TRUE_COLOR;
+    gif_image.data_size = gif_animation.frame_size;
+    gif_image.data = gif_animation.frames[0];
     
     // Apply the first frame
-    lv_img_set_src(ui_GIFseq, &custom_image);
+    lv_img_set_src(ui_GIFseq, &gif_image);
     
     // Create animation timer if it doesn't exist
     if (gif_animation.timer == NULL) {
@@ -567,7 +579,7 @@ esp_err_t app_features_init(void)
         apply_custom_gif();
     }
     // If no custom GIF is found, try to load static image
-    else if (load_custom_image_from_flash()) {
+    if (load_custom_image_from_flash()) {
         apply_custom_image();
     }
 
