@@ -17,6 +17,7 @@ extern "C" {
 #include "components/ui_comp_hook.h"
 #include "ui_events.h"
 
+void tree_Animation(lv_obj_t * TargetObject, int delay);
 
 // SCREEN: ui_Screen1
 void ui_Screen1_screen_init(void);
@@ -59,6 +60,14 @@ extern lv_obj_t * ui_RollerSTYLED2;
 extern lv_obj_t * ui_Label3;
 // CUSTOM VARIABLES
 
+// SCREEN: ui_Screen6
+void ui_Screen6_screen_init(void);
+void ui_event_Screen6(lv_event_t * e);
+extern lv_obj_t * ui_Screen6;
+extern lv_obj_t * ui_GIFseq;
+// CUSTOM VARIABLES
+extern lv_obj_t * uic_GIFseq;
+
 // EVENTS
 
 extern lv_obj_t * ui____initial_actions0;
@@ -71,6 +80,19 @@ LV_IMG_DECLARE(ui_img_clock_hour_png);    // assets/clock_hour.png
 LV_IMG_DECLARE(ui_img_bg1_png);    // assets/bg1.png
 LV_IMG_DECLARE(ui_img_gpu_png);    // assets/gpu.png
 LV_IMG_DECLARE(ui_img_445945451);    // assets/cpu-tower.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_00_png);    // assets/gif_frames/frame_00.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_08_png);    // assets/gif_frames/frame_08.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_01_png);    // assets/gif_frames/frame_01.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_02_png);    // assets/gif_frames/frame_02.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_03_png);    // assets/gif_frames/frame_03.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_04_png);    // assets/gif_frames/frame_04.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_05_png);    // assets/gif_frames/frame_05.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_06_png);    // assets/gif_frames/frame_06.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_07_png);    // assets/gif_frames/frame_07.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_09_png);    // assets/gif_frames/frame_09.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_10_png);    // assets/gif_frames/frame_10.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_11_png);    // assets/gif_frames/frame_11.png
+LV_IMG_DECLARE(ui_img_gif_frames_frame_12_png);    // assets/gif_frames/frame_12.png
 
 // FONTS
 LV_FONT_DECLARE(ui_font_H1);

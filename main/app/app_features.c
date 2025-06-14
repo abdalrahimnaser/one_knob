@@ -365,6 +365,8 @@ void volume_control_process_knob_event(void *event)
 
 }
 
+
+
 esp_err_t app_features_init(void)
 {
     // Load user configuration first
@@ -444,6 +446,7 @@ esp_err_t app_features_init(void)
 
 
     //_ui_screen_change(&ui_Screen5, LV_SCR_LOAD_ANIM_NONE, 500, 0, &ui_Screen5_screen_init);
+    tree_Animation(ui_GIFseq, 0);
 
 
     return ESP_OK;
