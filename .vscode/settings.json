@@ -1,0 +1,17 @@
+{
+  "idf.currentSetup": "/Users/abednaser/.espressif/v5.5.3/esp-idf",
+  "idf.port": "/dev/tty.usbmodem1401",
+  "idf.flashType": "UART",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32s3"
+  },
+  "clangd.path": "/Users/abednaser/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=/Users/abednaser/oneknob_v2/one_knob/build"
+  ]
+}

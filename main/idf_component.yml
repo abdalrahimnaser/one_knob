@@ -1,0 +1,5 @@
+dependencies:
+  espressif/esp_lcd_touch_cst816s: "*"
+  espressif/esp_lcd_sh8601: "*"
+  lvgl/lvgl: "9.5.0"
+
