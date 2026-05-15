@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "firmware",
-    "project_version":    "10d2668-dirty",
+    "project_version":    "b39e114-dirty",
     "project_path":       "/Users/abednaser/oneknob_v2/one_knob",
     "idf_path":           "/Users/abednaser/.espressif/v5.5.3/esp-idf",
     "build_dir":          "/Users/abednaser/oneknob_v2/one_knob/build",

@@ -74,8 +74,16 @@ static const sh8601_lcd_init_cmd_t lcd_init_cmds[] = {
 static void example_lvgl_flush_cb(lv_display_t *disp, const lv_area_t *area, uint8_t *px_map)
 {
     esp_lcd_panel_handle_t panel_handle = lv_display_get_user_data(disp);
-    ESP_LOGD(TAG, "Flush: x1=%d y1=%d x2=%d y2=%d", area->x1, area->y1, area->x2, area->y2);
-    esp_lcd_panel_draw_bitmap(panel_handle, area->x1, area->y1, area->x2 + 1, area->y2 + 1, px_map);
+
+    // Swap bytes in each 16-bit pixel (RGB565 byte swap)
+    uint16_t *pixels = (uint16_t *)px_map;
+    int pixel_count = (area->x2 - area->x1 + 1) * (area->y2 - area->y1 + 1);
+    for (int i = 0; i < pixel_count; i++) {
+        pixels[i] = (pixels[i] >> 8) | (pixels[i] << 8);
+    }
+
+    esp_lcd_panel_draw_bitmap(panel_handle, area->x1, area->y1,
+                              area->x2 + 1, area->y2 + 1, px_map);
     lv_display_flush_ready(disp);
 }
 
@@ -148,14 +156,13 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "=== app_main start ===");
 
-    // ---- BACKLIGHT ----
-    ESP_LOGI(TAG, "[1/10] Configuring backlight GPIO %d", EXAMPLE_PIN_NUM_BK_LIGHT);
-    gpio_config_t bk_gpio_config = {
-        .mode = GPIO_MODE_OUTPUT,
-        .pin_bit_mask = 1ULL << EXAMPLE_PIN_NUM_BK_LIGHT
-    };
-    ESP_ERROR_CHECK(gpio_config(&bk_gpio_config));
-    ESP_LOGI(TAG, "[1/10] Backlight GPIO configured OK");
+    gpio_reset_pin(EXAMPLE_PIN_NUM_BK_LIGHT);
+    gpio_set_direction(EXAMPLE_PIN_NUM_BK_LIGHT, GPIO_MODE_OUTPUT);
+    gpio_set_level(EXAMPLE_PIN_NUM_BK_LIGHT, 1);
+    vTaskDelay(pdMS_TO_TICKS(100));
+    ESP_LOGI(TAG, "Backlight forced HIGH at boot");
+
+
 
     // ---- SPI BUS ----
     ESP_LOGI(TAG, "[2/10] Initializing SPI bus on host %d", EXAMPLE_LCD_HOST);
