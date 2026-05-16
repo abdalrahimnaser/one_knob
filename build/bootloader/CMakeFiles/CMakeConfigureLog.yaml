@@ -23,8 +23,6 @@ events:
     names:
       - "git"
     candidate_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -53,10 +51,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/git"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/git"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/git"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/git"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/git"
@@ -78,8 +73,6 @@ events:
     found: "/usr/bin/git"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -108,7 +101,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -129,8 +121,6 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -159,10 +149,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/uname"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/uname"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/uname"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/uname"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/uname"
@@ -184,8 +171,6 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -214,7 +199,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -246,8 +230,6 @@ events:
       - "ninja"
       - "samu"
     candidate_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -276,14 +258,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/ninja-build"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/ninja"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/samu"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/ninja-build"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/ninja"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/samu"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/ninja-build"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/ninja"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/samu"
@@ -309,8 +284,6 @@ events:
     found: "/Users/abednaser/.espressif/tools/ninja/1.12.1/ninja"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -339,7 +312,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -361,8 +333,6 @@ events:
     names:
       - "xtensa-esp32s3-elf-gcc"
     candidate_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -391,10 +361,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc"
@@ -411,8 +378,6 @@ events:
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -441,7 +406,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -472,8 +436,6 @@ events:
     found: "/opt/homebrew/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -502,7 +464,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -549,8 +510,6 @@ events:
       - "ar"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -578,12 +537,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -612,7 +568,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -636,8 +591,6 @@ events:
       - "ranlib"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -665,12 +618,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -699,7 +649,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -723,8 +672,6 @@ events:
       - "strip"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -752,12 +699,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-strip"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -786,7 +730,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -810,8 +753,6 @@ events:
       - "ld"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -839,12 +780,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ld"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -873,7 +811,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -897,8 +834,6 @@ events:
       - "nm"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -926,12 +861,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-nm"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -960,7 +892,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -984,8 +915,6 @@ events:
       - "objdump"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1013,12 +942,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objdump"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1047,7 +973,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1071,8 +996,6 @@ events:
       - "objcopy"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1100,12 +1023,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objcopy"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1134,7 +1054,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1158,8 +1077,6 @@ events:
       - "readelf"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1187,12 +1104,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-readelf"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1221,7 +1135,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1245,8 +1158,6 @@ events:
       - "dlltool"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1274,11 +1185,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-dlltool"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-dlltool"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-dlltool"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-dlltool"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-dlltool"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-dlltool"
@@ -1306,10 +1214,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-dlltool"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-dlltool"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-dlltool"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-dlltool"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/dlltool"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/dlltool"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/dlltool"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/dlltool"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/dlltool"
@@ -1337,12 +1242,9 @@ events:
       - "/opt/pmk/env/global/bin/dlltool"
       - "/Library/TeX/texbin/dlltool"
       - "/opt/homebrew/bin/dlltool"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/dlltool"
     found: false
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1371,7 +1273,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1395,8 +1296,6 @@ events:
       - "addr2line"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1424,12 +1323,9 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-addr2line"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1458,7 +1354,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1482,8 +1377,6 @@ events:
       - "tapi"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1511,11 +1404,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-tapi"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-tapi"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-tapi"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-tapi"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-tapi"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-tapi"
@@ -1543,10 +1433,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-tapi"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-tapi"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-tapi"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-tapi"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/tapi"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/tapi"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/tapi"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/tapi"
@@ -1574,12 +1461,9 @@ events:
       - "/opt/pmk/env/global/bin/tapi"
       - "/Library/TeX/texbin/tapi"
       - "/opt/homebrew/bin/tapi"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/tapi"
     found: false
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1608,7 +1492,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1634,8 +1517,6 @@ events:
       - "xtensa-esp32s3-elf-gcc-ar"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1663,11 +1544,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar-14.2"
@@ -1695,10 +1573,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar-14.2"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar-14"
@@ -1726,10 +1601,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar-14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar-14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar14"
@@ -1757,12 +1629,9 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar14"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1791,7 +1660,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1817,8 +1685,6 @@ events:
       - "xtensa-esp32s3-elf-gcc-ranlib"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -1846,11 +1712,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib-14.2"
@@ -1878,10 +1741,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib-14"
@@ -1909,10 +1769,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib-14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib14"
@@ -1940,12 +1797,9 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib14"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -1974,7 +1828,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1996,8 +1849,6 @@ events:
     names:
       - "xtensa-esp32s3-elf-g++"
     candidate_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -2026,10 +1877,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-g++"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-g++"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-g++"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-g++"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-g++"
@@ -2046,8 +1894,6 @@ events:
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -2076,7 +1922,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2107,8 +1952,6 @@ events:
     found: "/opt/homebrew/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -2137,7 +1980,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -2186,8 +2028,6 @@ events:
       - "xtensa-esp32s3-elf-gcc-ar"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -2215,11 +2055,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar-14.2"
@@ -2247,10 +2084,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar-14.2"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar-14.2"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar-14"
@@ -2278,10 +2112,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar-14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar-14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar-14"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar14"
@@ -2309,12 +2140,9 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar14"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -2343,7 +2171,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2369,8 +2196,6 @@ events:
       - "xtensa-esp32s3-elf-gcc-ranlib"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -2398,11 +2223,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib-14.2"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib-14.2"
@@ -2430,10 +2252,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib-14.2"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib-14.2"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib-14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib-14"
@@ -2461,10 +2280,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib-14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib-14"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib14"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib14"
@@ -2492,12 +2308,9 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib14"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib14"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib14"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -2526,7 +2339,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2548,8 +2360,6 @@ events:
     names:
       - "xtensa-esp32s3-elf-gcc"
     candidate_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -2578,10 +2388,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc"
@@ -2598,8 +2405,6 @@ events:
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -2628,7 +2433,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -2668,8 +2472,6 @@ events:
       - "xtensa-esp32s3-elf-gcc-ar"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -2697,11 +2499,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar-"
@@ -2729,10 +2528,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar-"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar-"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar-"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar-"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ar-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ar-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ar-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ar-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ar-"
@@ -2760,12 +2556,9 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ar-"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ar-"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ar-"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ar-"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -2794,7 +2587,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2820,8 +2612,6 @@ events:
       - "xtensa-esp32s3-elf-gcc-ranlib"
     candidate_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/"
@@ -2849,11 +2639,8 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/TeX/texbin/"
       - "/opt/homebrew/bin/"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib-"
@@ -2881,10 +2668,7 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib-"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/xtensa-esp32s3-elf-gcc-ranlib-"
-      - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools/xtensa-esp32s3-elf-gcc-ranlib-"
@@ -2912,12 +2696,9 @@ events:
       - "/opt/pmk/env/global/bin/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/Library/TeX/texbin/xtensa-esp32s3-elf-gcc-ranlib-"
       - "/opt/homebrew/bin/xtensa-esp32s3-elf-gcc-ranlib-"
-      - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/xtensa-esp32s3-elf-gcc-ranlib-"
     found: "/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/abednaser/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/espcoredump"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/components/partition_table"
         - "/Users/abednaser/.espressif/v5.5.3/esp-idf/tools"
@@ -2946,7 +2727,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
         - "/opt/homebrew/bin"
-        - "/Users/abednaser/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -2957,8 +2737,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-gX6yYf"
-      binary: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-gX6yYf"
+      source: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-pjbGqN"
+      binary: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-pjbGqN"
     cmakeVariables:
       CMAKE_C_FLAGS: "-mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2968,10 +2748,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-gX6yYf'
+        Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-pjbGqN'
         
-        Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_8fe3b
-        [1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_bcd8a
+        [1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         Target: xtensa-esp-elf
@@ -2979,8 +2759,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_8fe3b.dir/'
-         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8fe3b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc0XU9Cv.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_bcd8a.dir/'
+         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_bcd8a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccrtQhRo.s
         GNU C17 (crosstool-NG esp-14.2.0_20251107) version 14.2.0 (xtensa-esp-elf)
         	compiled by GNU C version Debian Clang 11.0.1, GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -2997,12 +2777,12 @@ events:
          /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: 513abd5c52edd207b9d1c09e94af0bc7
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_8fe3b.dir/'
-         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc0XU9Cv.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_bcd8a.dir/'
+         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccrtQhRo.s
         COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.'
-        [2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj -o cmTC_8fe3b   && :
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj -o cmTC_bcd8a   && :
         Using built-in specs.
         COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         COLLECT_LTO_WRAPPER=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper
@@ -3013,10 +2793,10 @@ events:
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) 
         COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_8fe3b' '-dumpdir' 'cmTC_8fe3b.'
-         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccBO9RDY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_8fe3b -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_bcd8a' '-dumpdir' 'cmTC_bcd8a.'
+         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccdUjVQC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_bcd8a -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc
         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 00400074
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_8fe3b' '-dumpdir' 'cmTC_8fe3b.'
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_bcd8a' '-dumpdir' 'cmTC_bcd8a.'
         
       exitCode: 0
   -
@@ -3051,10 +2831,10 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-gX6yYf']
+        ignore line: [Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-pjbGqN']
         ignore line: []
-        ignore line: [Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_8fe3b]
-        ignore line: [[1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_bcd8a]
+        ignore line: [[1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [Target: xtensa-esp-elf]
@@ -3062,8 +2842,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_8fe3b.dir/']
-        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8fe3b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc0XU9Cv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_bcd8a.dir/']
+        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_bcd8a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccrtQhRo.s]
         ignore line: [GNU C17 (crosstool-NG esp-14.2.0_20251107) version 14.2.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version Debian Clang 11.0.1  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -3080,12 +2860,12 @@ events:
         ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 513abd5c52edd207b9d1c09e94af0bc7]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_8fe3b.dir/']
-        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc0XU9Cv.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_bcd8a.dir/']
+        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccrtQhRo.s]
         ignore line: [COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.']
-        ignore line: [[2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj -o cmTC_8fe3b   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj -o cmTC_bcd8a   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper]
@@ -3096,13 +2876,13 @@ events:
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) ]
         ignore line: [COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_8fe3b' '-dumpdir' 'cmTC_8fe3b.']
-        link line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccBO9RDY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_8fe3b -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_bcd8a' '-dumpdir' 'cmTC_bcd8a.']
+        link line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccdUjVQC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_bcd8a -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc]
           arg [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccBO9RDY.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccdUjVQC.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -3111,7 +2891,7 @@ events:
           arg [--sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32s3.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_8fe3b] ==> ignore
+          arg [cmTC_bcd8a] ==> ignore
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3]
@@ -3120,7 +2900,7 @@ events:
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [CMakeFiles/cmTC_8fe3b.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_bcd8a.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc] ==> lib [c]
           arg [-lnosys] ==> lib [nosys]
@@ -3128,7 +2908,7 @@ events:
           arg [-lgcc] ==> lib [gcc]
         ignore line: [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: warning: cannot find entry symbol _start]
         ignore line: [ defaulting to 00400074]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_8fe3b' '-dumpdir' 'cmTC_8fe3b.']
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_bcd8a' '-dumpdir' 'cmTC_bcd8a.']
         ignore line: []
         ignore line: []
         collapse library dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3] ==> [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/esp32s3]
@@ -3155,8 +2935,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-9J1RO6"
-      binary: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-9J1RO6"
+      source: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Tt5cDd"
+      binary: "/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Tt5cDd"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -3167,10 +2947,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-9J1RO6'
+        Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Tt5cDd'
         
-        Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_ac611
-        [1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_83b73
+        [1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         Target: xtensa-esp-elf
@@ -3178,8 +2958,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_ac611.dir/'
-         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ac611.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc7Isw15.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_83b73.dir/'
+         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_83b73.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccQwTQyR.s
         GNU C++17 (crosstool-NG esp-14.2.0_20251107) version 14.2.0 (xtensa-esp-elf)
         	compiled by GNU C version Debian Clang 11.0.1, GMP version 6.2.1, MPFR version 4.2.1, MPC version 1.2.1, isl version isl-0.26-GMP
         
@@ -3202,12 +2982,12 @@ events:
          /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: ac958e5d8ea94ccf774d2cae91f75f17
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_ac611.dir/'
-         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc7Isw15.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_83b73.dir/'
+         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccQwTQyR.s
         COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_ac611   && :
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_83b73   && :
         Using built-in specs.
         COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         COLLECT_LTO_WRAPPER=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper
@@ -3218,10 +2998,10 @@ events:
         gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) 
         COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_ac611' '-dumpdir' 'cmTC_ac611.'
-         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccb1PV8o.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_ac611 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_83b73' '-dumpdir' 'cmTC_83b73.'
+         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc9fVxHR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_83b73 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc
         /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: warning: cannot find entry symbol _start; defaulting to 00400074
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_ac611' '-dumpdir' 'cmTC_ac611.'
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_83b73' '-dumpdir' 'cmTC_83b73.'
         
       exitCode: 0
   -
@@ -3262,10 +3042,10 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-9J1RO6']
+        ignore line: [Change Dir: '/Users/abednaser/oneknob_v2/one_knob/build/bootloader/CMakeFiles/CMakeScratch/TryCompile-Tt5cDd']
         ignore line: []
-        ignore line: [Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_ac611]
-        ignore line: [[1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /Users/abednaser/.espressif/tools/ninja/1.12.1/ninja -v cmTC_83b73]
+        ignore line: [[1/2] /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy    -v -o CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [Target: xtensa-esp-elf]
@@ -3273,8 +3053,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_ac611.dir/']
-        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ac611.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc7Isw15.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_83b73.dir/']
+        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/ -isysroot /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_83b73.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -mlongcalls -version -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -o /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccQwTQyR.s]
         ignore line: [GNU C++17 (crosstool-NG esp-14.2.0_20251107) version 14.2.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version Debian Clang 11.0.1  GMP version 6.2.1  MPFR version 4.2.1  MPC version 1.2.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -3297,12 +3077,12 @@ events:
         ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: ac958e5d8ea94ccf774d2cae91f75f17]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_ac611.dir/']
-        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc7Isw15.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_83b73.dir/']
+        ignore line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/as --traditional-format --longcalls --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj /var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccQwTQyR.s]
         ignore line: [COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_ac611   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-v' '-o' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -nostartfiles  -v CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_83b73   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [COLLECT_LTO_WRAPPER=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper]
@@ -3313,13 +3093,13 @@ events:
         ignore line: [gcc version 14.2.0 (crosstool-NG esp-14.2.0_20251107) ]
         ignore line: [COMPILER_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_ac611' '-dumpdir' 'cmTC_ac611.']
-        link line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccb1PV8o.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_ac611 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_83b73' '-dumpdir' 'cmTC_83b73.']
+        link line: [ /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2 -plugin /Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so -plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper -plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc9fVxHR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_83b73 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0 -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc]
           arg [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/14.2.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//ccb1PV8o.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/var/folders/1y/qkj4q86j3tz9vz5z26xpx2z40000gn/T//cc9fVxHR.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -3328,7 +3108,7 @@ events:
           arg [--sysroot=/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32s3.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_ac611] ==> ignore
+          arg [cmTC_83b73] ==> ignore
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib/esp32s3]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3]
@@ -3337,7 +3117,7 @@ events:
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/lib]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [CMakeFiles/cmTC_ac611.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_83b73.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc] ==> lib [gcc]
@@ -3347,7 +3127,7 @@ events:
           arg [-lgcc] ==> lib [gcc]
         ignore line: [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/../../../../xtensa-esp-elf/bin/ld: warning: cannot find entry symbol _start]
         ignore line: [ defaulting to 00400074]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_ac611' '-dumpdir' 'cmTC_ac611.']
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-mlongcalls' '-fno-builtin-memcpy' '-fno-builtin-memset' '-fno-builtin-bzero' '-fno-builtin-stpcpy' '-fno-builtin-strncpy' '-nostartfiles' '-v' '-o' 'cmTC_83b73' '-dumpdir' 'cmTC_83b73.']
         ignore line: []
         ignore line: []
         collapse library dir [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/14.2.0/esp32s3] ==> [/Users/abednaser/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20251107/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/14.2.0/esp32s3]

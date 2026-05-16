@@ -1,4 +1,4 @@
-# Install script for directory: /Users/abednaser/oneknob_v2/one_knob/test_lvgl_editor/idf_wrapper_component
+# Install script for directory: /Users/abednaser/oneknob_v2/one_knob/ui/idf_wrapper_component
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

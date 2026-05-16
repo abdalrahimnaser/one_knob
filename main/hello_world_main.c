@@ -16,7 +16,7 @@
 #define CONFIG_EXAMPLE_LCD_CONTROLLER_SH8601 1
 #include "esp_lcd_sh8601.h"
 
-#include "test_lvgl_editor.h"
+#include "ui.h"
 #include "screens/screen1_gen.h"
 
 static const char *TAG = "example";
@@ -172,7 +172,6 @@ void app_main(void)
         EXAMPLE_PIN_NUM_LCD_DATA2, EXAMPLE_PIN_NUM_LCD_DATA3,
         EXAMPLE_LCD_H_RES * EXAMPLE_LCD_V_RES * LCD_BIT_PER_PIXEL / 8);
     ESP_ERROR_CHECK(spi_bus_initialize(EXAMPLE_LCD_HOST, &buscfg, SPI_DMA_CH_AUTO));
-    ESP_LOGI(TAG, "[2/10] SPI bus initialized OK");
 
     // ---- PANEL IO ----
     ESP_LOGI(TAG, "[3/10] Installing panel IO (QSPI, CS=GPIO%d)", EXAMPLE_PIN_NUM_LCD_CS);
@@ -185,7 +184,6 @@ void app_main(void)
     const esp_lcd_panel_io_spi_config_t io_config = SH8601_PANEL_IO_QSPI_CONFIG(
         EXAMPLE_PIN_NUM_LCD_CS, NULL, NULL);
     ESP_ERROR_CHECK(esp_lcd_new_panel_io_spi((esp_lcd_spi_bus_handle_t)EXAMPLE_LCD_HOST, &io_config, &io_handle));
-    ESP_LOGI(TAG, "[3/10] Panel IO installed OK");
 
     // ---- LCD PANEL ----
     ESP_LOGI(TAG, "[4/10] Installing SH8601 LCD driver (RST=GPIO%d, %dbpp)", EXAMPLE_PIN_NUM_LCD_RST, LCD_BIT_PER_PIXEL);
@@ -197,19 +195,15 @@ void app_main(void)
         .vendor_config = &vendor_config,
     };
     ESP_ERROR_CHECK(esp_lcd_new_panel_sh8601(io_handle, &panel_config, &panel_handle));
-    ESP_LOGI(TAG, "[4/10] SH8601 panel created OK");
 
     ESP_LOGI(TAG, "[4/10] Resetting panel...");
     ESP_ERROR_CHECK(esp_lcd_panel_reset(panel_handle));
-    ESP_LOGI(TAG, "[4/10] Panel reset OK");
 
     ESP_LOGI(TAG, "[4/10] Initializing panel...");
     ESP_ERROR_CHECK(esp_lcd_panel_init(panel_handle));
-    ESP_LOGI(TAG, "[4/10] Panel init OK");
 
     ESP_LOGI(TAG, "[4/10] Turning display on...");
     ESP_ERROR_CHECK(esp_lcd_panel_disp_on_off(panel_handle, true));
-    ESP_LOGI(TAG, "[4/10] Display on OK");
 
     // ---- I2C BUS (new master API) ----
     ESP_LOGI(TAG, "[5/10] Initializing I2C master bus (SDA=GPIO%d, SCL=GPIO%d)",
@@ -224,18 +218,15 @@ void app_main(void)
     };
     i2c_master_bus_handle_t i2c_bus_handle = NULL;
     ESP_ERROR_CHECK(i2c_new_master_bus(&i2c_bus_cfg, &i2c_bus_handle));
-    ESP_LOGI(TAG, "[5/10] I2C master bus created OK");
 
     // ---- TOUCH IO ----
     ESP_LOGI(TAG, "[6/10] Attaching CST816S touch IO to I2C bus");
     esp_lcd_panel_io_handle_t tp_io_handle = NULL;
     const esp_lcd_panel_io_i2c_config_t tp_io_config = ESP_LCD_TOUCH_IO_I2C_CST816S_CONFIG();
     ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c(i2c_bus_handle, &tp_io_config, &tp_io_handle));
-    ESP_LOGI(TAG, "[6/10] Touch IO attached OK");
 
     touch_mux = xSemaphoreCreateBinary();
     assert(touch_mux);
-    ESP_LOGI(TAG, "[6/10] Touch semaphore created OK");
 
     // ---- TOUCH CONTROLLER ----
     ESP_LOGI(TAG, "[7/10] Initializing CST816S (RST=GPIO%d, INT=GPIO%d)",
@@ -250,7 +241,6 @@ void app_main(void)
         .interrupt_callback = example_touch_isr_cb,
     };
     ESP_ERROR_CHECK(esp_lcd_touch_new_i2c_cst816s(tp_io_handle, &tp_cfg, &tp));
-    ESP_LOGI(TAG, "[7/10] CST816S touch controller initialized OK");
 
     // ---- BACKLIGHT ON ----
     ESP_LOGI(TAG, "[7/10] Turning on backlight");
@@ -259,13 +249,11 @@ void app_main(void)
     // ---- LVGL INIT ----
     ESP_LOGI(TAG, "[8/10] Initializing LVGL");
     lv_init();
-    ESP_LOGI(TAG, "[8/10] LVGL lv_init() OK");
 
     ESP_LOGI(TAG, "[8/10] Creating LVGL display (%dx%d)", EXAMPLE_LCD_H_RES, EXAMPLE_LCD_V_RES);
     lv_display_t *disp = lv_display_create(EXAMPLE_LCD_H_RES, EXAMPLE_LCD_V_RES);
     lv_display_set_user_data(disp, panel_handle);
     lv_display_set_flush_cb(disp, example_lvgl_flush_cb);
-    ESP_LOGI(TAG, "[8/10] LVGL display created OK");
 
     ESP_LOGI(TAG, "[8/10] Allocating draw buffers (%d pixels each)", EXAMPLE_LVGL_BUFF_SIZE);
     void *buf1 = heap_caps_malloc(EXAMPLE_LVGL_BUFF_SIZE * sizeof(lv_color_t), MALLOC_CAP_DMA);
@@ -275,10 +263,8 @@ void app_main(void)
                  (unsigned long)heap_caps_get_free_size(MALLOC_CAP_DMA));
         assert(false);
     }
-    ESP_LOGI(TAG, "[8/10] Draw buffers allocated OK (buf1=%p, buf2=%p)", buf1, buf2);
     lv_display_set_buffers(disp, buf1, buf2, EXAMPLE_LVGL_BUFF_SIZE * sizeof(lv_color_t),
                            LV_DISPLAY_RENDER_MODE_PARTIAL);
-    ESP_LOGI(TAG, "[8/10] LVGL buffers set OK");
 
     // ---- TOUCH INPUT DEVICE ----
     ESP_LOGI(TAG, "[9/10] Registering touch input device with LVGL");
@@ -286,7 +272,6 @@ void app_main(void)
     lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);
     lv_indev_set_read_cb(indev, example_lvgl_touch_cb);
     lv_indev_set_user_data(indev, tp);
-    ESP_LOGI(TAG, "[9/10] Touch input device registered OK");
 
     // ---- LVGL TICK TIMER ----
     ESP_LOGI(TAG, "[9/10] Starting LVGL tick timer (%dms period)", EXAMPLE_LVGL_TICK_PERIOD_MS);
@@ -297,7 +282,6 @@ void app_main(void)
     esp_timer_handle_t lvgl_tick_timer = NULL;
     ESP_ERROR_CHECK(esp_timer_create(&lvgl_tick_timer_args, &lvgl_tick_timer));
     ESP_ERROR_CHECK(esp_timer_start_periodic(lvgl_tick_timer, EXAMPLE_LVGL_TICK_PERIOD_MS * 1000));
-    ESP_LOGI(TAG, "[9/10] LVGL tick timer started OK");
 
     // ---- LVGL TASK ----
     ESP_LOGI(TAG, "[9/10] Creating LVGL task (stack=%d, priority=%d)",
@@ -311,20 +295,12 @@ void app_main(void)
         ESP_LOGE(TAG, "FATAL: Failed to create LVGL task! ret=%d", ret);
         assert(false);
     }
-    ESP_LOGI(TAG, "[9/10] LVGL task created OK");
 
     // ---- LOAD UI ----
     ESP_LOGI(TAG, "[10/10] Acquiring LVGL lock to load UI...");
     if (example_lvgl_lock(-1)) {
-        ESP_LOGI(TAG, "[10/10] Lock acquired, calling test_lvgl_editor_init()...");
-        test_lvgl_editor_init(NULL);
-        ESP_LOGI(TAG, "[10/10] test_lvgl_editor_init() done, calling screen1_create()...");
-        lv_obj_t *screen = screen1_create();
-        ESP_LOGI(TAG, "[10/10] screen1_create() returned %p, loading screen...", screen);
-        lv_screen_load(screen);
-        ESP_LOGI(TAG, "[10/10] Screen loaded OK");
+        ui_init(NULL);
         example_lvgl_unlock();
-        ESP_LOGI(TAG, "[10/10] LVGL lock released");
     } else {
         ESP_LOGE(TAG, "FATAL: Could not acquire LVGL lock!");
     }

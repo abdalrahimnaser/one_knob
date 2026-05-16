@@ -1,0 +1,10 @@
+set(LV_EDITOR_PROJECT_SOURCES)
+list(
+  APPEND
+  LV_EDITOR_PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/press_start_16_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/press_start_24_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/press_start_36_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen1_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/ui_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/ui.c)

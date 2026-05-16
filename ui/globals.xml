@@ -1,0 +1,86 @@
+<globals>
+	<api>
+		<!-- Add <enumdefs> here -->
+	</api>
+
+	<consts>
+		<!-- Add <px>, <int>, <color> etc here -->
+	</consts>
+
+	<styles>
+		<!-- Add <style> tags here -->
+	</styles>
+
+	<subjects>
+		<!-- Add <int>, <string>, or <float> subjects here -->
+	</subjects>
+
+	<images>
+		<!-- Add <file> or <data> tags here -->
+	</images>
+
+	<fonts>
+		<!-- <bin
+			as_file="false"
+			name="montserrat_16"
+			src_path="fonts/Montserrat-Medium.ttf"
+			size="16"
+			bpp="4"
+			range="0x20-0x7F"
+		/>
+
+		<bin
+			as_file="false"
+			name="montserrat_24"
+			src_path="fonts/Montserrat-Medium.ttf"
+			size="24"
+			bpp="4"
+			range="0x20-0x7F"
+		/>
+
+		<bin
+			as_file="false"
+			name="montserrat_36"
+			src_path="fonts/Montserrat-Medium.ttf"
+			size="36"
+			bpp="4"
+			range="0x20-0x7F"
+		/>
+
+		<bin
+			as_file="false"
+			name="montserrat_48"
+			src_path="fonts/Montserrat-Medium.ttf"
+			size="48"
+			bpp="4"
+			range="0x20-0x7F"
+		/> -->
+
+		<bin
+			as_file="false"
+			name="press_start_16"
+			src_path="fonts/PressStart2P-Regular.ttf"
+			size="16"
+			bpp="1"
+			range="0x20-0x7F"
+		/>
+
+		<bin
+			as_file="false"
+			name="press_start_24"
+			src_path="fonts/PressStart2P-Regular.ttf"
+			size="24"
+			bpp="1"
+			range="0x20-0x7F"
+		/>
+
+		<bin
+			as_file="false"
+			name="press_start_36"
+			src_path="fonts/PressStart2P-Regular.ttf"
+			size="36"
+			bpp="1"
+			range="0x20-0x7F"
+		/>
+	</fonts>
+</globals>

@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.16)
 
 
 
-set(EXTRA_COMPONENT_DIRS "test_lvgl_editor/idf_wrapper_component")
+set(EXTRA_COMPONENT_DIRS "ui/idf_wrapper_component")
 
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
