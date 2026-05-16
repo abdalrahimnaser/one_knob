@@ -94,6 +94,7 @@ void ui_init_gen(const char * asset_path);
 /*Include all the widgets, components and screens of this library*/
 #include "screens/screen1_gen.h"
 #include "screens/screen2_gen.h"
+#include "screens/screen3_gen.h"
 
 #ifdef __cplusplus
 } /*extern "C"*/

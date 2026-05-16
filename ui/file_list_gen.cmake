@@ -7,5 +7,6 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/fonts/press_start_36_data.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/screen1_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/screen2_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen3_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/ui_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/ui.c)
