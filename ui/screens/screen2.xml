@@ -1,0 +1,197 @@
+<screen>
+	<styles>
+		<style name="scr_bg" bg_color="0x000000" />
+	</styles>
+
+	<view>
+		<style name="scr_bg" />
+
+		<!-- ── Dial circle ── -->
+		<lv_obj
+			width="460"
+			height="460"
+			align="center"
+			style_bg_color="0x000000"
+			style_border_color="0x00FFD1"
+			style_border_width="3"
+			style_radius="230"
+		/>
+
+		<!-- ── Hour numerals (cardinal only) ── -->
+		<lv_label text="12" align="center" y="-180" style_text_color="0xFFFFFF" style_text_font="press_start_24" />
+		<lv_label text="3" align="center" x="168" y="0" style_text_color="0xFFFFFF" style_text_font="press_start_24" />
+		<lv_label text="6" align="center" y="160" style_text_color="0xFFFFFF" style_text_font="press_start_24" />
+		<lv_label text="9" align="center" x="-185" y="0" style_text_color="0xFFFFFF" style_text_font="press_start_24" />
+
+		<!-- ── Cardinal tick marks (teal, axis-aligned) ── -->
+		<!-- 12 -->
+		<lv_obj width="4" height="24" align="center" x="0" y="-210" style_bg_color="0x00FFD1" style_border_width="0" />
+		<!-- 3  -->
+		<lv_obj width="24" height="4" align="center" x="210" y="0" style_bg_color="0x00FFD1" style_border_width="0" />
+		<!-- 6  -->
+		<lv_obj width="4" height="24" align="center" x="0" y="210" style_bg_color="0x00FFD1" style_border_width="0" />
+		<!-- 9  -->
+		<lv_obj width="24" height="4" align="center" x="-210" y="0" style_bg_color="0x00FFD1" style_border_width="0" />
+
+		<!-- ── Minor hour dots (grey circles) ── -->
+		<!-- 1  -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="104"
+			y="-182"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+		<!-- 2  -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="182"
+			y="-104"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+		<!-- 4  -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="182"
+			y="104"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+		<!-- 5  -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="104"
+			y="182"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+		<!-- 7  -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="-104"
+			y="182"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+		<!-- 8  -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="-182"
+			y="104"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+		<!-- 10 -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="-182"
+			y="-104"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+		<!-- 11 -->
+		<lv_obj
+			width="8"
+			height="8"
+			align="center"
+			x="-104"
+			y="-182"
+			style_bg_color="0x333333"
+			style_border_width="0"
+			style_radius="4"
+		/>
+
+		<!-- ── Hour hand ── -->
+		<lv_obj
+			name="hand_hour"
+			width="8"
+			height="120"
+			align="center"
+			x="0"
+			y="-70"
+			style_bg_color="0xFFFFFF"
+			style_border_width="0"
+			style_radius="4"
+		/>
+
+		<!-- ── Minute hand ── -->
+		<lv_obj
+			name="hand_minute"
+			width="5"
+			height="170"
+			align="center"
+			x="0"
+			y="-95"
+			style_bg_color="0xFFFFFF"
+			style_border_width="0"
+			style_radius="2"
+		/>
+
+		<!-- ── Second hand ── -->
+		<lv_obj
+			name="hand_second"
+			width="3"
+			height="200"
+			align="center"
+			x="0"
+			y="-110"
+			style_bg_color="0xFFB300"
+			style_border_width="0"
+			style_radius="0"
+		/>
+
+		<!-- ── Centre dot ── -->
+		<lv_obj
+			width="20"
+			height="20"
+			align="center"
+			style_bg_color="0xFFFFFF"
+			style_border_width="0"
+			style_radius="10"
+		/>
+
+		<!-- ── Date strip — below centre ── -->
+		<lv_obj
+			width="120"
+			height="36"
+			align="center"
+			x="0"
+			y="60"
+			style_bg_color="0x000000"
+			style_border_color="0x00FFD1"
+			style_border_width="2"
+			style_radius="4"
+		/>
+		<lv_label
+			name="lbl_date"
+			text="SAT 16"
+			align="center"
+			x="0"
+			y="60"
+			style_text_color="0x00FFD1"
+			style_text_font="press_start_16"
+		/>
+	</view>
+</screen>

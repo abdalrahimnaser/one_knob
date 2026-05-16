@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "firmware",
-    "project_version":    "e047d67-dirty",
+    "project_version":    "31a17dc-dirty",
     "project_path":       "/Users/abednaser/oneknob_v2/one_knob",
     "idf_path":           "/Users/abednaser/.espressif/v5.5.3/esp-idf",
     "build_dir":          "/Users/abednaser/oneknob_v2/one_knob/build",
@@ -775,7 +775,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/abednaser/oneknob_v2/one_knob/build/esp-idf/idf_wrapper_component/libidf_wrapper_component.a",
-            "sources": [ "/Users/abednaser/oneknob_v2/one_knob/ui/fonts/press_start_16_data.c", "/Users/abednaser/oneknob_v2/one_knob/ui/fonts/press_start_24_data.c", "/Users/abednaser/oneknob_v2/one_knob/ui/fonts/press_start_36_data.c", "/Users/abednaser/oneknob_v2/one_knob/ui/screens/screen1_gen.c", "/Users/abednaser/oneknob_v2/one_knob/ui/ui_gen.c", "/Users/abednaser/oneknob_v2/one_knob/ui/ui.c" ],
+            "sources": [ "/Users/abednaser/oneknob_v2/one_knob/ui/fonts/press_start_16_data.c", "/Users/abednaser/oneknob_v2/one_knob/ui/fonts/press_start_24_data.c", "/Users/abednaser/oneknob_v2/one_knob/ui/fonts/press_start_36_data.c", "/Users/abednaser/oneknob_v2/one_knob/ui/screens/screen1_gen.c", "/Users/abednaser/oneknob_v2/one_knob/ui/screens/screen2_gen.c", "/Users/abednaser/oneknob_v2/one_knob/ui/ui_gen.c", "/Users/abednaser/oneknob_v2/one_knob/ui/ui.c" ],
             "include_dirs": [ "/Users/abednaser/oneknob_v2/one_knob/ui/idf_wrapper_component/..", "/Users/abednaser/oneknob_v2/one_knob/ui/idf_wrapper_component/../screens", "/Users/abednaser/oneknob_v2/one_knob/ui/idf_wrapper_component/../fonts", "/Users/abednaser/oneknob_v2/one_knob/ui/idf_wrapper_component/../images", "/Users/abednaser/oneknob_v2/one_knob/ui/idf_wrapper_component/../widgets" ]
         },
         "log": {
